@@ -1,5 +1,5 @@
 # Calculating Baseball’s Slash Stats in SAS
-### A Tribute to the Game’s First Data Analyst x2
+### A Tribute to the Game’s First Data Analyst x3
 
 ### History and Origins
 Baseball fans today live by the “slash line” — batting average, on-base percentage, and slugging percentage.  
@@ -62,8 +62,8 @@ Workflow:
 
 
 **Data and Tools**  
-•	Data from **Lahman’s Baseball Database** (SQLite)
-•	**SQL** for extracting a data subset
+•	Data from **Lahman’s Baseball Database** (SQLite)  
+•	**SQL** for extracting a data subset  
 •	**SAS Workbench** for importing, processing, and computing metrics  
 
 ---
@@ -139,7 +139,7 @@ run;
 
 **Results:** Top 10 Batting Averages Since 1970  
 <!--insert table--> 
-![Top 10 BA](https://samedgemon.github.io/baseball/Blog1_SlashStats/Images/TOP10BA_1970.png)
+![Top 10 BA](https://samedgemon.github.io/SportsAnaltics/baseball/Blog1_SlashStats/Images/TOP10BA_1970.png)
 
 ---
 
@@ -147,12 +147,13 @@ run;
 When Henry Chadwick started keeping score, he wasn’t just documenting baseball — he was translating a game into data.
 He made performance measurable, trends visible, and debate possible.  
 
-Every slash line, OPS leaderboard, and modern metric traces back to his insight that **numbers can tell the story of the game.**
+Every slash line, OPS leaderboard, and modern metric traces back to his insight that 
+**numbers can tell the story of the game.**
 
 **A Note on Data Science Skills**  
-*One purpose of this series is to teach data science through sports. In this single exercise, we’ve defined the objective,  
-identified the variables we need, laid out the workflow, selected tools, extracted data using SQL, imported it into an  
-analytical environment, engineered new features, wrote reproducible code, and produced a simple report. These are the  
+*One purpose of this series is to teach data science through sports. In this single exercise, we’ve defined the objective,
+identified the variables we need, laid out the workflow, selected tools, extracted data using SQL, imported it into an
+analytical environment, engineered new features, wrote reproducible code, and produced a simple report. These are the
 same steps analysts use every day—just applied here to baseball instead of finance, healthcare, or operations.*
 
 **Next up:** Recreating a classic **Hank Aaron** baseball card — complete with his full slash line and OPS.
