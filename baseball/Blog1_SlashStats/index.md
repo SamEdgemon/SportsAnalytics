@@ -11,8 +11,11 @@ Behind those numbers lies a story stretching back more than 160 years to one Eng
 
 Henry Chadwick (1824–1908) was the first data analyst in baseball history, and he concluded that the sport needed structure and statistics. Long before Baseball Reference or the Baseball Abstract, Chadwick was collecting data by hand. Born in England and beginning his journalism career in the U.S. in the 1850s, he discovered baseball in 1856 and was instantly hooked.  
 
-Chadwick believed the game needed ways to measure performance. He created the batting average and earned run average, and he helped shape the box score — including the familiar “K” for strikeout.
+Chadwick believed the game needed ways to measure performance. He created the batting average and earned run average, and he helped shape the box score — including the familiar “K” for strikeout.  
+
 <!--box score image-->  
+Early Chadwick Boxscore.
+![Box Score](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Images/HenryChadwickBoxScore.jpg)
 
 His work gave baseball its first true performance metrics and made the game measurable.  
 
