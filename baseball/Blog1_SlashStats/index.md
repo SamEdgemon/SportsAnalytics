@@ -74,7 +74,7 @@ With the metrics and workflow in place, it’s time to write some code. I’ve o
 2.	I want to subset the data: seasons from 1954 forward (first consistent sacrifice fly data), and minimum 50 AB to reduce noise.  
 
 **SQL Code for Query**  
-``` markdown
+``` SQL
 SELECT  playerID, yearID, teamID, G, AB, H,
         [2B], [3B], HR, R, RBI, SB, CS, BB,
         SF, HBP
@@ -90,7 +90,7 @@ You can download BatttingExtract.csv here.
 You can get SAS Workbench here.  
 
 Upload the CSV and import it:
-``` markdown
+``` SAS
 filename mycsv "<your directory path>/BattingExtract.csv";
 proc import datafile=mycsv
    out=temp
@@ -103,7 +103,7 @@ run;
 A temporary dataset called temp is created.  
 
 **Calculating Slash Line Metrics**
-``` markdown
+``` SAS
 data SlashStats;
    set work.temp;
    '1B'n = H - '2B'n - '3B'n - HR;
@@ -117,7 +117,7 @@ run;
 This short program produces the same measures once calculated by hand, but in milliseconds.
 
 **Exploring the Results**  
-``` markdown
+``` SAS
 data BA;
    set work.SlashStats;
    where yearid >= 1970 and AB >= 200;
