@@ -1,5 +1,5 @@
 # Calculating Baseball’s Slash Stats in SAS
-### A Tribute to the Game’s First Data Analyst x3
+### A Tribute to the Game’s First Data Analyst x4
 
 ### History and Origins
 Baseball fans today live by the “slash line” — batting average, on-base percentage, and slugging percentage.  
