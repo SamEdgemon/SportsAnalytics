@@ -87,10 +87,10 @@ WHERE   yearID >= 1954 AND
 ```
  
 I exported the results as BattingExtract.csv.  
-You can download BatttingExtract.csv here.  
+You can download BatttingExtract.csv [here](https://samedgemon.github.io/Baseball/Blog1_SlashStats/Data/BattingExtract.csv).  
 
 ### SAS Workbench  
-You can get SAS Workbench here.  
+You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.  
 
 Upload the CSV and import it:
 ``` SAS
