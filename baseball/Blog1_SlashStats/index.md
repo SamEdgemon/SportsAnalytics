@@ -13,7 +13,7 @@ Henry Chadwick (1824–1908) was the first data analyst in baseball history, and
 
 Chadwick believed the game needed ways to measure performance. He created the batting average and earned run average, and he helped shape the box score — including the familiar “K” for strikeout.  
 
-**Early Chadwick Boxscore.** 
+**Early Chadwick Boxscore.**  
 ![Box Score](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Images/HenryChadwickBoxScore.jpg)
 
 His work gave baseball its first true performance metrics and made the game measurable.  
