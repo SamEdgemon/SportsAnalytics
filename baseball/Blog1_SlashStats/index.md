@@ -138,7 +138,8 @@ run;
 ```
 
 **Results:** Top 10 Batting Averages Since 1970  
-<!--insert table-->  
+<!--insert table--> 
+![Top 10 BA](https://samedgemon.github.io/Baseball/Blog1_SlashStats/Images/TOP10BA_1970.png)
 
 ---
 
