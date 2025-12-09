@@ -3,8 +3,9 @@
 
 ### History and Origins
 Baseball fans today live by the “slash line” — batting average, on-base percentage, and slugging percentage.  
-You’ll see it everywhere:
-.300 / .400 / .500
+
+You’ll see it everywhere:  
+**.300 / .400 / .500**
 
 Behind those numbers lies a story stretching back more than 160 years to one Englishman with a notebook and a deep love for a new American game.  
 
