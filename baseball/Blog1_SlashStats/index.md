@@ -48,7 +48,7 @@ Formulas:
 
 **Requirements / Strategies**  
 
-Variables needed:
+Variables needed:  
 H, AB, BB, HBP, SF, 2B, 3B, HR  
 
 Additional variables for later analysis:  
@@ -62,9 +62,9 @@ Workflow:
 
 
 **Data and Tools**  
-•	Data from **Lahman’s Baseball Database** (SQLite)  
-•	**SQL** for extracting a data subset  
-•	**SAS Workbench** for importing, processing, and computing metrics  
+-	Data from **Lahman’s Baseball Database** (SQLite)  
+-	**SQL** for extracting a data subset  
+-	**SAS Workbench** for importing, processing, and computing metrics  
 
 ---
 
@@ -139,7 +139,7 @@ run;
 
 **Results:** Top 10 Batting Averages Since 1970  
 <!--insert table--> 
-![Top 10 BA](https://samedgemon.github.io/SportsAnaltics/baseball/Blog1_SlashStats/Images/TOP10BA_1970.png)
+![Top 10 BA](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Images/TOP10BA_1970.png)
 
 ---
 
@@ -147,7 +147,7 @@ run;
 When Henry Chadwick started keeping score, he wasn’t just documenting baseball — he was translating a game into data.
 He made performance measurable, trends visible, and debate possible.  
 
-Every slash line, OPS leaderboard, and modern metric traces back to his insight that 
+Every slash line, OPS leaderboard, and modern metric traces back to his insight that  
 **numbers can tell the story of the game.**
 
 **A Note on Data Science Skills**  
