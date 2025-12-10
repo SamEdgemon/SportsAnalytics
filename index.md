@@ -50,9 +50,8 @@ Below you’ll find the sports included in this series. Click a sport to view it
 - Coming Soon! Football   <!-- [Coming Soon! Football](Blog2_BaseballCardStats/) -->
 <!-- [Blog 3: Bill James and the Pythagorean Theorem](Blog3_Pythagorean/) -->
 
-<br>
+For additional materials, see the **Resources** section for links to the software used in these projects.
 
-See **Resources** for links to software used in the projects.
 
 <!--
 ## Resources
