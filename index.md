@@ -7,22 +7,6 @@
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
 
-
-<!--
-<nav style="margin: 12px 0 18px 0; font-family: inherit;">
-  <a href="/" style="margin-right:18px; text-decoration:none;">Home</a>
-  <a href="/About/" style="margin-right:18px; text-decoration:none;">About</a>
-  <a href="/Resources/" style="margin-right:18px; text-decoration:none;">Resources</a>
-  <a href="/baseball/" style="margin-right:18px; text-decoration:none;">Baseball</a>
-</nav>
-<hr style="margin-bottom:18px;">
--->
-
-<!--
-{% include nav.html %}
--->
-
-
 <br>
 
 <link rel="stylesheet" href="/assets/css/custom.css">
