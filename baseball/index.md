@@ -1,3 +1,4 @@
+<!--
 <p align="left">
   <a href="/SportsAnalytics/">Home</a>  |
   <a href="/SportsAnalytics/About/">About</a>  |
@@ -5,8 +6,9 @@
   <a href="/SportsAnalytics/Resources/">Resources</a>  |
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
+-->
 
-<br>
+{% include nav.html %}
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
