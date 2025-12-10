@@ -7,6 +7,7 @@
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
 
+<<<<<<< HEAD
 
 <!--
 <nav style="margin: 12px 0 18px 0; font-family: inherit;">
@@ -19,6 +20,8 @@
 -->
 
 
+=======
+>>>>>>> 71204484c5e413d76fa6392aa822f660d038ef30
 <br>
 
 <link rel="stylesheet" href="/assets/css/custom.css">
