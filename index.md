@@ -18,10 +18,6 @@
 <hr style="margin-bottom:18px;">
 -->
 
-<!--
-{% include nav.html %}
--->
-
 
 <br>
 

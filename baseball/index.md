@@ -7,10 +7,6 @@
 </p>
 
 
-<!--
-{% include nav.html %}
--->
-
 <link rel="stylesheet" href="/assets/css/custom.css">
 
 ## Welcome to Sabermetrics 101 v0

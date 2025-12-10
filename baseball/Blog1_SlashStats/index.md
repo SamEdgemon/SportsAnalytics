@@ -7,9 +7,6 @@
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
 
-<!--
-{% include /nav.html %}
--->
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
