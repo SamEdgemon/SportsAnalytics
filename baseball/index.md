@@ -1,3 +1,9 @@
+---
+layout: default
+title: Baseball Analytics
+---
+
+
 <!--
 <p align="left">
   <a href="/SportsAnalytics/">Home</a>  |
