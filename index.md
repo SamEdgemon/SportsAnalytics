@@ -1,3 +1,4 @@
+<!--
 <p align="left">
   <a href="/SportsAnalytics/">Home</a>  |
   <a href="/SportsAnalytics/About/">About</a>  |
@@ -5,6 +6,16 @@
   <a href="/SportsAnalytics/Resources/">Resources</a>  |
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
+-->
+
+<nav style="margin: 12px 0 18px 0; font-family: inherit;">
+  <a href="/" style="margin-right:18px; text-decoration:none;">Home</a>
+  <a href="/About/" style="margin-right:18px; text-decoration:none;">About</a>
+  <a href="/Resources/" style="margin-right:18px; text-decoration:none;">Resources</a>
+  <a href="/baseball/" style="margin-right:18px; text-decoration:none;">Baseball</a>
+</nav>
+<hr style="margin-bottom:18px;">
+
 
 <br>
 
