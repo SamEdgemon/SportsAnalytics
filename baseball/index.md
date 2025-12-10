@@ -1,10 +1,3 @@
----
-layout: default
-title: Baseball Analytics
----
-
-
-<!--
 <p align="left">
   <a href="/SportsAnalytics/">Home</a>  |
   <a href="/SportsAnalytics/About/">About</a>  |
@@ -12,7 +5,7 @@ title: Baseball Analytics
   <a href="/SportsAnalytics/Resources/">Resources</a>  |
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
--->
+
 
 <!--
 {% include nav.html %}

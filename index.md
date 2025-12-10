@@ -1,4 +1,4 @@
-<!--
+
 <p align="left">
   <a href="/SportsAnalytics/">Home</a>  |
   <a href="/SportsAnalytics/About/">About</a>  |
@@ -6,7 +6,7 @@
   <a href="/SportsAnalytics/Resources/">Resources</a>  |
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
--->
+
 
 <!--
 <nav style="margin: 12px 0 18px 0; font-family: inherit;">
@@ -18,8 +18,9 @@
 <hr style="margin-bottom:18px;">
 -->
 
+<!--
 {% include nav.html %}
-
+-->
 
 
 <br>
