@@ -52,6 +52,9 @@ Below you’ll find the sports included in this series. Click a sport to view it
 
 <br>
 
+See **Resources** for links to software used in the projects.
+
+<!--
 ## Resources
 
 - **SAS Workbench** is a cloud-based, on-demand coding environment for data scientists and developers to build advanced models. You can access SAS Workbench [here](https://www.sas.com/en_us/software/viya-workbench-for-learners.html).
@@ -59,6 +62,8 @@ Below you’ll find the sports included in this series. Click a sport to view it
 - **Lahman Baseball Database** was created by Sean Lahman and contains complete and extensive major league statistics dating back to 1871. It is not necessary to download the full database, as extracts will be provided for you; however, it is available for download [here](https://sabr.org/lahman-database/).
 
 - **SQLite** is a self-contained, serverless, transactional SQL database engine. Like the Lahman Database, it is not necessary to download it for this instructional series, but it is available for download [here](https://sqlite.org/).
+
+-->
 
 
 
