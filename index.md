@@ -24,6 +24,7 @@ Along the way, you’ll get hands-on experience with tools used every day by ana
 
 **Software and data will be provided** — everything you need to learn, practice, and explore.
 
+<br>
 ---
 
 ## Blog Posts by Sport
@@ -38,18 +39,6 @@ Below you’ll find the sports included in this series. Click a sport to view it
 <!-- [Blog 3: Bill James and the Pythagorean Theorem](Blog3_Pythagorean/) -->
 
 For additional materials, see the **Resources** section for links to the software used in these projects.
-
-
-<!--
-## Resources
-
-- **SAS Workbench** is a cloud-based, on-demand coding environment for data scientists and developers to build advanced models. You can access SAS Workbench [here](https://www.sas.com/en_us/software/viya-workbench-for-learners.html).
-
-- **Lahman Baseball Database** was created by Sean Lahman and contains complete and extensive major league statistics dating back to 1871. It is not necessary to download the full database, as extracts will be provided for you; however, it is available for download [here](https://sabr.org/lahman-database/).
-
-- **SQLite** is a self-contained, serverless, transactional SQL database engine. Like the Lahman Database, it is not necessary to download it for this instructional series, but it is available for download [here](https://sqlite.org/).
-
--->
 
 
 
