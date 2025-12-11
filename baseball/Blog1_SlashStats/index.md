@@ -6,11 +6,10 @@
 <link rel="stylesheet" href="/assets/css/custom.css">
 
 # Calculating Baseball’s Slash Stats in SAS
-### A Tribute to the Game’s First Data Analyst  
+ 
+<br>
 
-version x9.
-
-### History and Origins
+### History and Origins: Henry Chadwick
 Baseball fans today live by the “slash line” — batting average, on-base percentage, and slugging percentage.  
 
 You’ll see it everywhere:  
@@ -18,7 +17,7 @@ You’ll see it everywhere:
 
 Behind those numbers lies a story stretching back more than 160 years to one Englishman with a notebook and a deep love for a new American game.  
 
-Henry Chadwick (1824–1908) was the first data analyst in baseball history, and he concluded that the sport needed structure and statistics. Long before Baseball Reference or the Baseball Abstract, Chadwick was collecting data by hand. Born in England and beginning his journalism career in the U.S. in the 1850s, he discovered baseball in 1856 and was instantly hooked.  
+**Henry Chadwick** (1824–1908) was the first data analyst in baseball history, and he concluded that the sport needed structure and statistics. Long before Baseball Reference or the Baseball Abstract, Chadwick was collecting data by hand. Born in England and beginning his journalism career in the U.S. in the 1850s, he discovered baseball in 1856 and was instantly hooked.  
 
 Chadwick believed the game needed ways to measure performance. He created the batting average and earned run average, and he helped shape the box score — including the familiar “K” for strikeout.  
 

@@ -5,16 +5,6 @@
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
-<!-- # Sports Analytics Series
-
-Learn analytics and data science through the power of sports.
-
----
--->
-
-<!-- ## Welcome to the Sports Analytics Series -->
-
-version x3
 
 **Welcome to the Sports Analytics Series** — a learning experience designed to help you think and work like a data scientist, using the world of sports as your training ground.
 

@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
-## Welcome to Sabermetrics 101 v0
+## Welcome to Sabermetrics 101
 
 If you’ve ever wondered what “analytics” really means — or if this is your first time seeing data science in action — you’ve come to the right place.
 
