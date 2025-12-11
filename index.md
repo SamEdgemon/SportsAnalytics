@@ -8,6 +8,13 @@
 </p>
 -->
 
+
+---
+layout: default
+title: Some Page
+---
+
+
 {% include nav.html %}
 
 
