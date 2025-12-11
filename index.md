@@ -24,7 +24,6 @@ Along the way, you’ll get hands-on experience with tools used every day by ana
 
 **Software and data will be provided** — everything you need to learn, practice, and explore.
 
-<br>
 ---
 
 ## Blog Posts by Sport
