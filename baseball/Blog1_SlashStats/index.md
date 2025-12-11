@@ -5,9 +5,8 @@
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
-# Calculating Baseball’s Slash Stats in SAS
- 
-<br>
+# Calculating Baseball’s Slash Stats in SAS  
+
 
 ### History and Origins: Henry Chadwick
 Baseball fans today live by the “slash line” — batting average, on-base percentage, and slugging percentage.  
@@ -158,7 +157,9 @@ When Henry Chadwick started keeping score, he wasn’t just documenting baseball
 He made performance measurable, trends visible, and debate possible.  
 
 Every slash line, OPS leaderboard, and modern metric traces back to his insight that  
-**numbers can tell the story of the game.**
+**numbers can tell the story of the game.**  
+
+---
 
 **A Note on Data Science Skills**  
 *One purpose of this series is to teach data science through sports. In this single exercise, we’ve defined the objective,
