@@ -7,22 +7,6 @@
   <a href="/SportsAnalytics/baseball/">Baseball</a>
 </p>
 
-<<<<<<< HEAD
-
-<!--
-<nav style="margin: 12px 0 18px 0; font-family: inherit;">
-  <a href="/" style="margin-right:18px; text-decoration:none;">Home</a>
-  <a href="/About/" style="margin-right:18px; text-decoration:none;">About</a>
-  <a href="/Resources/" style="margin-right:18px; text-decoration:none;">Resources</a>
-  <a href="/baseball/" style="margin-right:18px; text-decoration:none;">Baseball</a>
-</nav>
-<hr style="margin-bottom:18px;">
--->
-
-
-=======
->>>>>>> 71204484c5e413d76fa6392aa822f660d038ef30
-<br>
 
 <link rel="stylesheet" href="/assets/css/custom.css">
 
@@ -34,6 +18,8 @@ Learn analytics and data science through the power of sports.
 -->
 
 <!-- ## Welcome to the Sports Analytics Series -->
+
+version x0.
 
 **Welcome to the Sports Analytics Series** — a learning experience designed to help you think and work like a data scientist, using the world of sports as your training ground.
 
