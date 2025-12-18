@@ -7,3 +7,10 @@ footer a[href*="github.com"] {
 footer p {
   display: none !important;
 }
+
+.img-card {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+}
+
