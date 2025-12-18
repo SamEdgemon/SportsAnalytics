@@ -40,9 +40,12 @@ It was the back of the card that mattered most. **It told a story with numbers!*
 
 The student bought the baseball card and took it home.  
 
-### 1974 Topps Henry Aaron "Home Run King" Baseball Card
+**1974 Topps Henry Aaron "Home Run King" Baseball Card**
 
-![Front](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv2.png) 
+<img src="/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv2.png"
+     alt="Front"
+     class="img-card">
+
 ![Back](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974ToppsBackv2.png)
 
 
