@@ -9,8 +9,11 @@ footer p {
 }
 
 .img-card {
-  max-width: 320px;
-  width: 80%;
-  height: auto;
+  max-width: 320px;   /* never exceed 320px */
+  width: 100%;        /* scale down to container width if smaller */
+  height: auto;       /* maintain aspect ratio */
+  display: block;
+  margin: 1rem auto;  /* center horizontally with spacing */
 }
+
 
