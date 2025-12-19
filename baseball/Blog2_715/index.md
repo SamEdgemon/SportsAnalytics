@@ -3,7 +3,7 @@
 {% include nav.html %}
 
 
-<link rel="stylesheet" href="/assets/css/custom.css">
+<link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css">
 
 # The Home Run King
 ## Henry Aaron Broke Babe Ruth's Home Run Record on April 8, 1974
