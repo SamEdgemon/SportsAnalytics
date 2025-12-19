@@ -6,11 +6,10 @@
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css">
 
 # The Home Run King
-## Henry Aaron Broke Babe Ruth's Home Run Record on April 8, 1974
 
-## History and Origins: 715 Home Runs  
+### History and Origins: Henry Aaron
 
-The game between the Atlanta Braves and the Los Angeles Dodgers was played at Atlanta-Fulton County Stadium. One hundred eighty-five miles to the north, a kid sat alone in a house in Paint Rock, Tennessee, on the floor in front of the family television.  
+The game between the Atlanta Braves and the Los Angeles Dodgers was played at Atlanta-Fulton County Stadium on April 8, 1974. One hundred eighty-five miles to the north, a kid sat alone in a house in Paint Rock, Tennessee, on the floor in front of the family television.  
 
 He adjusted the knobs carefully, fine-tuning the UHF channel hoping to get the best picture possible. He was proud of how clear it looked. Then he took a deep breath and waited.  
 
@@ -40,8 +39,7 @@ It was the back of the card that mattered most. **It told a story with numbers!*
 
 The student bought the baseball card and took it home.  
 
-**1974 Topps Henry Aaron "Home Run King" Baseball Card**
-
+**1974 Topps Henry Aaron "Home Run King" Baseball Card**  
 
 ![Frnt](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv3.png)
 ![Back](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974ToppsBackv3.png)
@@ -55,18 +53,18 @@ This project updates the **1974 Topps Henry Aaron Home Run King baseball card** 
 
 ## Building the Modern Slash Line from Historical Data  
 
-### Objective  
+**Objective**  
 
 Recreate the 1974 Topps Henry Aaron baseball card while incorporating modern slash line metrics: BA, OBP, SLG, and OPS.
 
-### Metrics and Formulas  
+**Metrics and Formulas**  
 
 - BA  = H / AB
 - OBP = (H + BB + HBP) / (AB + BB + HBP + SF)
 - SLG = (1B + 2*2B + 3*3B + 4*HR) / AB
 - OPS = OBP + SLG
 
-### Required Variables  
+**Required Variables**  
 
 From the original card, we can see that we need:  
 **Year, Team, AB, H, 2B, 3B, HR, RBI, Batting Average**
@@ -75,19 +73,19 @@ To compute addtional metrics, we also require:
 **BB, HBP, and SF**
 
 
-### Workflow
+**Workflow**
 1. Import an existing CSV file (BattingExtract.csv)*
 2. Calculate modern slash line metrics
 3. Recreate the baseball card as a tabular report
 
 *BattingExtract.csv was created in the last blog, and it can be downloaded [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Data/BattingExtract.csv).  
 
-### Data and Tools
+**Data and Tools**
 - Historical batting data from a prior project
 - BattingExtract.csv
 - SAS Workbench for data processing, metric calculation, and reporting
 
-## Code / Implementation  
+**Code / Implementation**
 
 We will use **SAS Workbench** to complete this task. You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.
 
