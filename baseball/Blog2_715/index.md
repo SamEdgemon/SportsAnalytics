@@ -44,7 +44,7 @@ The student bought the baseball card and took it home.
 
 
 ![Frnt](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv3.png)
-![Back](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974ToppsBackv2.png)
+![Back](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974ToppsBackv3.png)
 
 
 ### Hank's Card Needs the Modern Slash Line  
