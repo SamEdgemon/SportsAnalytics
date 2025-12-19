@@ -89,7 +89,7 @@ To compute addtional metrics, we also require:
 
 We will use **SAS Workbench** to complete this task. You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.
 
-Import the CSV file:
+**Import** the CSV file:
 ``` SAS
 filename mycsv "<your directory path>/BattingExtract.csv";
 proc import datafile=mycsv
@@ -100,9 +100,9 @@ proc import datafile=mycsv
 run;
 ```  
 
-A temporary dataset (temp) is created.
+*A temporary dataset (temp) is created.*
 
-Calculate slash line metrics:  
+**Calculate** slash line metrics:  
 ``` SAS
 data SlashStats;
    set work.temp;
@@ -113,9 +113,9 @@ data SlashStats;
    OPS = OBP + SLG;
 run;
 ```  
-What once required manual calculation now completes in milliseconds.
+*What once required manual calculation now completes in milliseconds.*
 
-We need to "find" Henry Aaron in the data. His playerID is "aaronha01'
+**Subset" the data using Henry Aaron's playerID: "aaronha01'
 
 ``` SAS
 data Aaron;
@@ -132,15 +132,17 @@ proc means nonobs n min max ndec=0;
    title 'Valid: YearID';
 run;
 ```
-It is a **best practice to validate** at everystep. We check to make sure that all playerID's are what we expect, and that records exist for each year oh Henry Aaron's career up to and including 1973.
+*It is a **best practice to validate** at everystep. We check to make sure that all playerID's are what we expect, and that records exist for each year oh Henry Aaron's career up to and including 1973.*
 
-Validation.
+**Validation**
 
 ![Freq](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/FreqValid.png) 
 ![Means](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/MeansValid.png)
 
 
-Creating the Report:
+Creating the Report: is not straightforward. It is important to realized that the “career row” on a baseball card is not a row in the data — **it is a derived aggregation.** This means some of of our preferred methods for printing results will not work!
+
+Our approach....
 
 ``` SAS
 proc sql noprint;
@@ -204,7 +206,7 @@ proc print noobs label;
 run;
 ```
 
-The 1974 Topps Henry Aaron Home Run King Baseball Card:
+**The Updated 1974 Topps Henry Aaron Home Run King Baseball Card.**
 
 ![Freq](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Card.png) 
 
