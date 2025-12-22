@@ -23,7 +23,7 @@ The Dodgers answered immediately. Steve Garvey singled. Bill Russell doubled. Al
 
 The kid was still sitting on the floor. He knew Aaron would bat again in the next inning.  
 
-The fourth inning began with Darrell Evans reaching on an error by Bill Russell. **Henry Aaron came to the plate** as the tying run. The crowd of 53,775 — the largest in the stadium's history — rose with a low, electric buzz. Aaron stepped into the box sitting on 714.  
+The fourth inning began with Darrell Evans reaching on an error by Bill Russell. **Henry Aaron came to the plate** as the tying run. The crowd of 53,775 was the the largest in the stadium's history and all in attendence appeared to rise with a low, electric buzz. Aaron stepped into the box sitting on 714.  
 
 Downing's first pitch was low, in the dirt. The count moved to 1-0.  
 
@@ -37,7 +37,7 @@ Years later, that same kid was in college, looking through a box of old baseball
 
 It was the back of the card that mattered most. **It told a story with numbers!**  
 
-The student bought the baseball card and took it home.  
+He bought the baseball card and took it home.  
 
 **1974 Topps Henry Aaron "Home Run King" Baseball Card**  
 
@@ -47,22 +47,29 @@ The student bought the baseball card and took it home.
 
 ### Hank's Card Needs the Modern Slash Line  
 
-When Henry Aaron played, the statistics most consistently shown were batting average and home runs. If he played today, it would be difficult to discuss his career without also referencing on-base percentage (OBP) and OPS.  
+When Henry Aaron played, the statistics most consistently shown were batting average and home runs. If he played today, it would be difficult to discuss his career without referencing on-base percentage (OBP) and OPS.  
 
-This project updates the **1974 Topps Henry Aaron Home Run King baseball card** using modern sabermetric measures. The goal is not to replace the original card, but to add context and insight using metrics that better describe offensive value.
+This project updates the **1974 Topps Henry Aaron Home Run King baseball card** with modern sabermetric measures. The goal is to create a report that replicates the original card, but also adds context and insight using metrics that better describe offensive value. Let's add the the *slash stats!*  
+
+<br>
 
 ## Building the Modern Slash Line from Historical Data  
 
+We will state the objective, what we know (formulas), requirements, workflow, and finally the data and tools available to us:  
+
+
 **Objective**  
 
-Recreate the 1974 Topps Henry Aaron baseball card while incorporating modern slash line metrics: BA, OBP, SLG, and OPS.
+Recreate the 1974 Topps Henry Aaron baseball card while incorporating modern slash line metrics: BA, OBP, SLG, and OPS.  
+
 
 **Metrics and Formulas**  
 
 - BA  = H / AB
 - OBP = (H + BB + HBP) / (AB + BB + HBP + SF)
 - SLG = (1B + 2*2B + 3*3B + 4*HR) / AB
-- OPS = OBP + SLG
+- OPS = OBP + SLG  
+
 
 **Required Variables**  
 
@@ -70,7 +77,7 @@ From the original card, we can see that we need:
 **Year, Team, AB, H, 2B, 3B, HR, RBI, Batting Average**
 
 To compute addtional metrics, we also require:  
-**BB, HBP, and SF**
+**BB, HBP, and SF**  
 
 
 **Workflow**
@@ -80,10 +87,12 @@ To compute addtional metrics, we also require:
 
 *BattingExtract.csv was created in the last blog, and it can be downloaded [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Data/BattingExtract.csv).  
 
+
 **Data and Tools**
 - Historical batting data from a prior project
 - BattingExtract.csv
-- SAS Workbench for data processing, metric calculation, and reporting
+- SAS Workbench for data processing, metric calculation, and reporting  
+
 
 **Code / Implementation**
 
