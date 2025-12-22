@@ -74,10 +74,10 @@ Recreate the 1974 Topps Henry Aaron baseball card while incorporating modern sla
 **Required Variables**  
 
 From the original card, we can see that we need:  
-**Year, Team, AB, H, 2B, 3B, HR, RBI, Batting Average**
+- Year, Team, AB, H, 2B, 3B, HR, RBI, Batting Average
 
 To compute addtional metrics, we also require:  
-**BB, HBP, and SF**  
+- BB, HBP, and SF**  
 
 
 **Workflow**
@@ -85,7 +85,7 @@ To compute addtional metrics, we also require:
 2. Calculate modern slash line metrics
 3. Recreate the baseball card as a tabular report
 
-*BattingExtract.csv was created in the last blog, and it can be downloaded [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Data/BattingExtract.csv).  
+***BattingExtract.csv** was created in the last blog, and it can be downloaded [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog1_SlashStats/Data/BattingExtract.csv).  
 
 
 **Data and Tools**
@@ -93,8 +93,9 @@ To compute addtional metrics, we also require:
 - BattingExtract.csv
 - SAS Workbench for data processing, metric calculation, and reporting  
 
+<br>
 
-**Code / Implementation**
+## Code / Implementation
 
 We will use **SAS Workbench** to complete this task. You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.
 
@@ -122,9 +123,11 @@ data SlashStats;
    OPS = OBP + SLG;
 run;
 ```  
-*What once required manual calculation now completes in milliseconds.*
+*What once required manual calculation now completes in milliseconds. Note that singles must be calculated for the SLG calculation.*  
 
-**Subset" the data using Henry Aaron's playerID: "aaronha01'
+<br>  
+
+**Subset" the data using Henry Aaron's playerID (aaronha01) and the yearID (to match the baseball card).
 
 ``` SAS
 data Aaron;
@@ -149,9 +152,9 @@ run;
 ![Means](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/MeansValid.png)
 
 
-Creating the Report: is not straightforward. It is important to realized that the “career row” on a baseball card is not a row in the data — **it is a derived aggregation.** This means some of of our preferred methods for printing results will not work!
+**Creating the Report is not straightforward.** It is important to realize that the “career row” on a baseball card is not another row in the data — **it is a derived aggregation.** And, we need to understand that our chosen set of tools (in SAS) will "average the avaerages" and that's a problem relative to creating this line, so **we must improvise!**
 
-Our approach....
+Our approach to creating the *career* line at the bottom of the report:
 
 ``` SAS
 proc sql noprint;
@@ -166,7 +169,9 @@ proc sql noprint;
 quit;
 %let careerOPS = %sysevalf(&careerOBP + &careerSLG);
 ```  
-Creating the Report:
+*I might have solved this problem with PROC SUMMARY, a data step with retained totals, or By group and LAST logic ... but, the choice was to solve this problem with PROC SQL because it better replicates how we think about the problem. NOte that information is being captured as MACRO variables to bue used later.*
+
+Grab those MACRO variables and create a dataset:
 ``` SAS
 data AaronCareer;
     length yearID $10 teamID $10;
@@ -187,8 +192,11 @@ data AaronCareer;
     OPS = &careerOPS;
 run;
 ```
+*The plan is to SET this dataset with the rest of the data that has been pulled and in some cases calculated from BattingExtract.csv. Note that yearID has
+been assigned the value of "Career" which will be an inconsistant format considering the rest of the data.*  
 
-Creating the Report:
+
+Creating the final dataset:
 ``` SAS
 data AaronChar;
     set Aaron;
@@ -202,8 +210,9 @@ data AaronFinal;
    set AaronChar AaronCareer;
 run;
 ```
+*YearID must be addressed regarding the format. AaronChar is created with a converted yearID." AaronFinal SETs AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset. Note this is how we are appending the derived career row.
 
-Creating the Report:
+it all comes together - let's create the report:
 ``` SAS
 proc print noobs label;
    var yearID teamID G AB H '2B'n '3B'n HR RBI BA OBP SLG OPS;
@@ -213,29 +222,27 @@ proc print noobs label;
    title 'Hank Aaron Baseball Card';
    title2 '1974 Topps Home Run King';
 run;
-```
+```  
 
-**The Updated 1974 Topps Henry Aaron Home Run King Baseball Card.**
+*Coding was done to make our report work. Some might say that PROC PRINT failed, but it did exactly what it susposed to do. Assuming that a reporting PROC could replace an analytical one (or an analytical process) would, however, constitute a failure. The "win" in the case was to recoginize that the derived metrics must be recomputed after aggregation.*  
+
+**The Report: Updated 1974 Topps Henry Aaron Home Run King Baseball Card.**
 
 ![Freq](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Card.png) 
 
-
+<br>
 
 ### Why Baseball Cards Matter
-For generations, baseball cards were an introduction to statistics�and often to mathematics itself. Kids learned to compare, rank, sum, and average long before they encountered formal coursework.
-Recreating a baseball card from historical data demonstrates the power of reporting and communication. The value of analytics is not just in calculation, but in presenting information clearly and meaningfully.
+For generations, baseball cards were an introduction to statistics and often to mathematics itself. Kids learned to compare, rank, sum, and average long before they encountered formal coursework. Recreating a baseball card from historical data demonstrates the power of reporting and communication. The value of analytics is not just in calculation, but in presenting information clearly and meaningfully.
+
+<br>
 
 #### A Note on Data Science Skills
-Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth.
-In doing so, we practiced core data science skills used by analysts every day:
-* Importing external data from a CSV file
-* Writing code to engineer new features and metrics
-* Applying macro-style techniques to make calculations repeatable
-* Updating a report to reflect modern analytical standards
-* Communicating results through a clean, structured table
-Along the way, we also defined objectives, identified required variables, selected appropriate tools, and followed a reproducible workflow from raw data to final output.
-These same steps apply across industries�finance, healthcare, operations, manufacturing�not just baseball. The context may change, but the process remains the same.
-In this case, that process allowed us to revisit one of baseball�s most historic moments and view it through a modern analytical lens.
+Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. And, we used macro variables to capture and resuse summary statistics. We explicitity recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). Finally, a clean and reproducible report that updates a classic baseball card with modern slash stats was produced.
+
+These steps mirror how analysts work in any domain: the data is explored and considered, aggregated (correctly), recompute metrics, and seperate logic from presentation.
+
+<br>
 
 ### Next Up
 The Eras of the Game.
