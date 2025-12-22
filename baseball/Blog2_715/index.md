@@ -110,7 +110,9 @@ proc import datafile=mycsv
 run;
 ```  
 
-*A temporary dataset (temp) is created.*
+*A temporary dataset (temp) is created.*  
+
+<br>
 
 **Calculate** slash line metrics:  
 ``` SAS
@@ -149,10 +151,14 @@ run;
 **Validation**
 
 ![Freq](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/FreqValid.png) 
-![Means](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/MeansValid.png)
+![Means](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/MeansValid.png)  
+
+<br>
 
 
-**Creating the Report is not straightforward.** It is important to realize that the “career row” on a baseball card is not another row in the data — **it is a derived aggregation.** And, we need to understand that our chosen set of tools (in SAS) will "average the avaerages" and that's a problem relative to creating this line, so **we must improvise!**
+**Creating the Report is not straightforward.** It is important to realize that the “career row” on a baseball card is not another row in the data — **it is a derived aggregation.** And, we need to understand that our chosen set of tools (in SAS) will "average the avaerages" and that's a problem relative to creating this line, so **we must improvise!**  
+
+<br>
 
 Our approach to creating the *career* line at the bottom of the report:
 
@@ -169,7 +175,9 @@ proc sql noprint;
 quit;
 %let careerOPS = %sysevalf(&careerOBP + &careerSLG);
 ```  
-*I might have solved this problem with PROC SUMMARY, a data step with retained totals, or By group and LAST logic ... but, the choice was to solve this problem with PROC SQL because it better replicates how we think about the problem. NOte that information is being captured as MACRO variables to bue used later.*
+*This problem might have been solved with PROC SUMMARY, or a DATA step with retained totals, or maby with BY group and LAST logic ... but, the choice was to solve this problem with **PROC SQL** because it better replicates how we think about the problem: when need Aaron's career numbers ... what are they? 
+
+NOte that information is being captured as MACRO variables to bue used later.*
 
 Grab those MACRO variables and create a dataset:
 ``` SAS
@@ -192,11 +200,14 @@ data AaronCareer;
     OPS = &careerOPS;
 run;
 ```
-*The plan is to SET this dataset with the rest of the data that has been pulled and in some cases calculated from BattingExtract.csv. Note that yearID has
-been assigned the value of "Career" which will be an inconsistant format considering the rest of the data.*  
+*Let's create a dataset using those macro variable with these 2 things in mind: (1) if it can be avoided, don't computer metrics in reports, and with that in mind (2) calculate once, but use many times!
+
+Note that yearID has been assigned the value of "Career" which will be an inconsistant format considering the rest of the data.*  
+
+<br>
 
 
-Creating the final dataset:
+Address the format issue and create the final dataset:
 ``` SAS
 data AaronChar;
     set Aaron;
@@ -210,9 +221,11 @@ data AaronFinal;
    set AaronChar AaronCareer;
 run;
 ```
-*YearID must be addressed regarding the format. AaronChar is created with a converted yearID." AaronFinal SETs AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset. Note this is how we are appending the derived career row.
+*YearID is addressed regarding the format. a dataset, AaronChar, is created with a converted yearID. AaronFinal SETs togther AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset. 
 
-it all comes together - let's create the report:
+Note that Setting these tables is how we are appending the derived career row.*
+
+It has all comes together so let's create the report:
 ``` SAS
 proc print noobs label;
    var yearID teamID G AB H '2B'n '3B'n HR RBI BA OBP SLG OPS;
@@ -226,6 +239,8 @@ run;
 
 *Coding was done to make our report work. Some might say that PROC PRINT failed, but it did exactly what it susposed to do. Assuming that a reporting PROC could replace an analytical one (or an analytical process) would, however, constitute a failure. The "win" in the case was to recoginize that the derived metrics must be recomputed after aggregation.*  
 
+<br>
+
 **The Report: Updated 1974 Topps Henry Aaron Home Run King Baseball Card.**
 
 ![Freq](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Card.png) 
@@ -237,7 +252,7 @@ For generations, baseball cards were an introduction to statistics and often to 
 
 <br>
 
-#### A Note on Data Science Skills
+### A Note on Data Science Skills
 Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. And, we used macro variables to capture and resuse summary statistics. We explicitity recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). Finally, a clean and reproducible report that updates a classic baseball card with modern slash stats was produced.
 
 These steps mirror how analysts work in any domain: the data is explored and considered, aggregated (correctly), recompute metrics, and seperate logic from presentation.
