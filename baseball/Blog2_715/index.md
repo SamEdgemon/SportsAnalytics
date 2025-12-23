@@ -146,7 +146,7 @@ proc means nonobs n min max ndec=0;
    title 'Valid: YearID';
 run;
 ```
-*It is a **best practice to validate** at every step. We check to make sure that all playerID's are what we expect, and that records exist for each year of Henry Aaron's career up to and including 1973.*
+*It is a **best practice to validate** at key steps. We use PROC FREQ to confirm identity, and we use PROC MEANS to confirm converage across seasons.*
 
 **Validation**
 
@@ -158,11 +158,11 @@ run;
 <br>
 
 
-**Creating the Report is not straightforward.** It is important to realize that the “career row” on a baseball card is not another row in the data — **it is a derived aggregation.** And, we need to understand that our chosen set of tools (in SAS) will "average the averages" and that's a problem relative to creating this line, so **we must improvise!**  
+**Creating the Report is not straightforward.** It is important to realize that the “career row” on a baseball card is not another row in the data; rather **it is a derived aggregation.** To put it another way, this is an opportunity to make the classic mistake of *averaging averages.* To avoid making this mistake, we must understand our tools, and we must position those tools for success! **We must improvise!**  
 
 <br>
 
-Our approach to creating the *career* line:
+**Improvising.** Use PROC SQL to calculate the career numbers and create macro variables that we can use later.
 
 ``` SAS
 proc sql noprint;
@@ -177,9 +177,9 @@ proc sql noprint;
 quit;
 %let careerOPS = %sysevalf(&careerOBP + &careerSLG);
 ```  
-*This problem might have been solved with PROC SUMMARY, or a DATA step with retained totals, or maybe with BY group and LAST logic ... but, the choice was to solve this problem with **PROC SQL** because it better replicates how we think about the problem: when need Aaron's career numbers ... what are they?*
+*This problem might have been solved with PROC SUMMARY, or a DATA step with retained totals, or maybe with BY group and LAST logic ... but, the choice was to solve this problem with **PROC SQL** because it better replicates out thought processes: "we need Aaron's career numbers ... what are they?"*
 
-Note that information is being captured as MACRO variables to be used later.*
+<br>
 
 Grab those MACRO variables and create a dataset:
 ``` SAS
@@ -202,9 +202,9 @@ data AaronCareer;
     OPS = &careerOPS;
 run;
 ```
-*Let's create a dataset using those macro variable with these 2 things in mind: (1) if it can be avoided, don't compute metrics in reports, and with that in mind (2) calculate once, but use many times!
+*Let's create a dataset using those macro variable with these 2 things in mind: (1) if it can be avoided, don't compute metrics in reports, and with that in mind (2) calculate once, but use many times!*
 
-Note that yearID has been assigned the value of "Career" which will be an inconsistent format considering the rest of the data.*  
+*Note that yearID has been assigned the value of "Career" which will be an inconsistent format considering the rest of the data.*  
 
 <br>
 
@@ -223,9 +223,11 @@ data AaronFinal;
    set AaronChar AaronCareer;
 run;
 ```
-*YearID is addressed regarding the format. a dataset, AaronChar, is created with a converted yearID. AaronFinal SETs together AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset. 
+*YearID is addressed regarding the format. a dataset, AaronChar, is created with a converted yearID. AaronFinal SETs together AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset.* 
 
-Note that Setting these tables is how we are appending the derived career row.*
+*Note that Setting these tables is how we are appending the derived career row.*  
+
+<br>
 
 It has all comes together so let's create the report:
 ``` SAS
@@ -255,12 +257,12 @@ For generations, baseball cards were an introduction to statistics and often to 
 <br>
 
 ### A Note on Data Science Skills
-Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. And, we used macro variables to capture and reuse summary statistics. We recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). Finally, a clean and reproducible report that updates a classic baseball card with modern slash stats was produced.
+Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. And, we used macro variables to capture and reuse summary statistics. We recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). And ultimately, we create a clean and reproducible report that updates a classic baseball card with modern slash stats.
 
-These steps mirror how analysts work in any domain: the data is explored and considered, aggregated (correctly), recompute metrics, and seperate logic from presentation.
+These steps mirror how analysts work in any domain: the data was explored and considered, aggregated (correctly), metrics recomputed, and anaytical logic was created seperate from the presentation.
 
 <br>
 
 ### Next Up
-The Eras of the Game.
+The Eras of the Game. How have changes to rules effected the game? What about changes in the manufacturer of baseballs, or even social change? We will look at runs scored throughout the history of the game and visualize how change has effected the scoring of runs from season to season.
 
