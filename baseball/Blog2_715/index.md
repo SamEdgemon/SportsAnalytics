@@ -33,13 +33,13 @@ On the very next pitch, at approximately 9:07 p.m. local time, **Aaron swung for
 
 The kid stood and watched the scene unfold. He knew this would be talked about ... forever!  
 
-Years later, that same kid was in college, looking through a box of old baseball cards. One card caught his attention. On the front, it proclaimed Henry Aaron the "Home Run King."  
+Years later, that same kid was in college, looking through a box of old baseball cards. One card caught his attention. On the front, it proclaimed Hank Aaron the "Home Run King."  
 
 It was the back of the card that mattered most. **It told a story with numbers!**  
 
 He bought the baseball card and took it home.  
 
-**1974 Topps Henry Aaron "Home Run King" Baseball Card**  
+**1974 Topps Hank Aaron "Home Run King" Baseball Card**  
 
 ![Front](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv3.png)
 ![Back](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974ToppsBackv3.png)
@@ -47,9 +47,9 @@ He bought the baseball card and took it home.
 
 ### Hank's Card Needs the Modern Slash Line  
 
-When Henry Aaron played, the statistics most consistently shown were batting average and home runs. If he played today, it would be difficult to discuss his career without referencing on-base percentage (OBP) and OPS.  
+When Hank Aaron played, the statistics most consistently shown were batting average and home runs. If he played today, it would be difficult to discuss his career without referencing on-base percentage (OBP) and OPS.  
 
-This project updates the **1974 Topps Henry Aaron Home Run King baseball card** with modern sabermetric measures. The goal is to create a report that replicates the original card, but also adds context and insight using metrics that better describe offensive value. Let's add the the *slash stats!*  
+This project updates the **1974 Topps Hank Aaron Home Run King baseball card** with modern sabermetric measures. The goal is to create a report that replicates the original card, but also adds context and insight using metrics that better describe offensive value. Let's add the the *slash stats!*  
 
 <br>
 
@@ -60,7 +60,7 @@ We will state the objective, what we know (formulas), requirements, workflow, an
 
 **Objective**  
 
-Recreate the 1974 Topps Henry Aaron baseball card while incorporating modern slash line metrics: BA, OBP, SLG, and OPS.  
+Recreate the 1974 Topps Hank Aaron baseball card while incorporating modern slash line metrics: BA, OBP, SLG, and OPS.  
 
 
 **Metrics and Formulas**  
@@ -129,7 +129,7 @@ run;
 
 <br>  
 
-**Subset** the data using Henry Aaron's playerID (aaronha01) and the yearID to match the baseball card.
+**Subset** the data using Hank Aaron's playerID (aaronha01) and the yearID to match the baseball card.
 
 ``` SAS
 data Aaron;
@@ -258,7 +258,7 @@ For generations, baseball cards were an introduction to statistics and often to 
 <br>
 
 ### A Note on Data Science Skills
-Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. We used macro variables to capture and reuse summary statistics. We recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). Ultimately, we created a clean and reproducible report that updates a classic baseball card with modern slash stats.
+Watching Hank Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. We used macro variables to capture and reuse summary statistics. We recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). Ultimately, we created a clean and reproducible report that updates a classic baseball card with modern slash stats.
 
 These steps mirror how analysts work in any domain: the data was explored and considered, aggregated (correctly), metrics recomputed, and analytical logic was created separate from the presentation.
 
