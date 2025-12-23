@@ -7,15 +7,15 @@
 
 # The Home Run King
 
-### History and Origins: Henry Aaron
+### History and Origins: Henry "Hank" Aaron
 
 The game between the Atlanta Braves and the Los Angeles Dodgers was played at Atlanta-Fulton County Stadium on April 8, 1974. One hundred eighty-five miles to the north, a kid sat alone in a house in Paint Rock, Tennessee, on the floor in front of the family television.  
 
 He adjusted the knobs carefully, fine-tuning the UHF channel hoping to get the best picture possible. He was proud of how clear it looked. Then he took a deep breath and waited.  
 
-The Braves started right-hander Ron Reed. The Dodgers countered with left-hander Al Downing. Henry Aaron batted cleanup and played left field. Darrell Evans and Dusty Baker were also in the lineup that night.  
+The Braves started right-hander Ron Reed. The Dodgers countered with left-hander Al Downing. Hank Aaron batted cleanup and played left field. Darrell Evans and Dusty Baker were also in the lineup that night.  
 
-In the bottom of the second inning, with the game scoreless, Aaron led off and drew a walk on five pitches. He never took the bat off his shoulder. He appeared almost detached, surveying the field without emotion. The crowd booed the walk.  
+In the bottom of the second inning, with the game scoreless, Aaron led off and drew a walk on five pitches. He never took the bat off his shoulder. He appeared almost detached, surveying the field without emotion. The crowd booed the pitcher for the walk!  
 
 Dusty Baker followed with a double to left. An error by Bill Buckner allowed Aaron to score from first, giving Atlanta a 1-0 lead. In the process, Aaron set a **new National League record for career runs scored.**  
 
@@ -23,7 +23,7 @@ The Dodgers answered immediately. Steve Garvey singled. Bill Russell doubled. Al
 
 The kid was still sitting on the floor. He knew Aaron would bat again in the next inning.  
 
-The fourth inning began with Darrell Evans reaching on an error by Bill Russell. **Henry Aaron came to the plate** as the tying run. The crowd of 53,775 was the the largest in the stadium's history and all in attendence appeared to rise with a low, electric buzz. Aaron stepped into the box sitting on 714.  
+The fourth inning began with Darrell Evans reaching on an error by Bill Russell. **Henry Aaron came to the plate** as the tying run. The crowd of 53,775 was the largest in the stadium's history and all in attendance appeared to rise with a low, electric buzz. Aaron stepped into the box sitting on 714.  
 
 Downing's first pitch was low, in the dirt. The count moved to 1-0.  
 
@@ -41,7 +41,7 @@ He bought the baseball card and took it home.
 
 **1974 Topps Henry Aaron "Home Run King" Baseball Card**  
 
-![Frnt](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv3.png)
+![Front](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974Toppsv3.png)
 ![Back](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/Aaron1974ToppsBackv3.png)
 
 
@@ -73,11 +73,11 @@ Recreate the 1974 Topps Henry Aaron baseball card while incorporating modern sla
 
 **Required Variables**  
 
-From the original card, we can see that we need:  
+From the original card, we can see that we need:
 - Year, Team, AB, H, 2B, 3B, HR, RBI, Batting Average
 
-To compute additional metrics, we also require:  
-- BB, HBP, and SF**  
+To compute additional metrics, we also require:
+- BB, HBP, and SF 
 
 
 **Workflow**
@@ -89,8 +89,7 @@ To compute additional metrics, we also require:
 
 
 **Data and Tools**
-- Historical batting data from a prior project
-- BattingExtract.csv
+- Historical batting data from a prior project: BattingExtract.csv
 - SAS Workbench for data processing, metric calculation, and reporting  
 
 <br>
@@ -125,11 +124,12 @@ data SlashStats;
    OPS = OBP + SLG;
 run;
 ```  
-*What once required manual calculation now completes in milliseconds. Note that singles must be calculated for the SLG calculation.*  
+*What once required manual calculation now completes in milliseconds.*
+*Note that singles must be calculated for the SLG calculation.*  
 
 <br>  
 
-**Subset** the data using Henry Aaron's playerID (aaronha01) and the yearID (to match the baseball card).
+**Subset** the data using Henry Aaron's playerID (aaronha01) and the yearID to match the baseball card.
 
 ``` SAS
 data Aaron;
@@ -146,9 +146,10 @@ proc means nonobs n min max ndec=0;
    title 'Valid: YearID';
 run;
 ```
-*It is a **best practice to validate** at key steps. We use PROC FREQ to confirm identity, and we use PROC MEANS to confirm converage across seasons.*
+*It is a **best practice to validate** at key steps.*
+*We use PROC FREQ to confirm identity, and PROC MEANS to confirm coverage across seasons.*
 
-**Validation**
+**Validation Results**
 
 ![Freq](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/FreqValid.png) 
 ![Means](https://samedgemon.github.io/SportsAnalytics/baseball/Blog2_715/Images/MeansValid.png)  
@@ -177,11 +178,11 @@ proc sql noprint;
 quit;
 %let careerOPS = %sysevalf(&careerOBP + &careerSLG);
 ```  
-*This problem might have been solved with PROC SUMMARY, or a DATA step with retained totals, or maybe with BY group and LAST logic ... but, the choice was to solve this problem with **PROC SQL** because it better replicates out thought processes: "we need Aaron's career numbers ... what are they?"*
+*This problem might have been solved with PROC SUMMARY, or a DATA step with retained totals, or maybe with BY group and LAST logic ... but, the choice was to solve this problem with **PROC SQL** because it better replicates our thought processes, i.e. "we need Aaron's career numbers ... what are they?"*
 
 <br>
 
-Grab those MACRO variables and create a dataset:
+Grab those macro variables and create a dataset:
 ``` SAS
 data AaronCareer;
     length yearID $10 teamID $10;
@@ -202,7 +203,7 @@ data AaronCareer;
     OPS = &careerOPS;
 run;
 ```
-*Let's create a dataset using those macro variable with these 2 things in mind: (1) if it can be avoided, don't compute metrics in reports, and with that in mind (2) calculate once, but use many times!*
+*Let's create a dataset using those macro variables with these 2 things in mind: (1) if it can be avoided, don't compute metrics in reports, and with that in mind (2) calculate once, but use many times!*
 
 *Note that yearID has been assigned the value of "Career" which will be an inconsistent format considering the rest of the data.*  
 
@@ -223,13 +224,13 @@ data AaronFinal;
    set AaronChar AaronCareer;
 run;
 ```
-*YearID is addressed regarding the format. a dataset, AaronChar, is created with a converted yearID. AaronFinal SETs together AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset.* 
+*YearID is addressed regarding the format, and a dataset, AaronChar, is created with a converted yearID. AaronFinal SETs together AaronChar and AaronCareer, and RETAIN is simply used to order the variables in the dataset.* 
 
 *Note that Setting these tables is how we are appending the derived career row.*  
 
 <br>
 
-It has all comes together so let's create the report:
+It has all come together so let's create the report:
 ``` SAS
 proc print noobs label;
    var yearID teamID G AB H '2B'n '3B'n HR RBI BA OBP SLG OPS;
@@ -241,7 +242,7 @@ proc print noobs label;
 run;
 ```  
 
-*Coding was done to make our report work. Some might say that PROC PRINT failed, but it did exactly what it was supposed to do. Assuming that a reporting PROC could replace an analytical one (or an analytical process) would, however, constitute a failure. The "win" in the case was to recognize that the derived metrics must be recomputed after aggregation.*  
+*Some might say that PROC PRINT failed, but it did exactly what it was supposed to do. Assuming that a reporting PROC could replace an analytical one (or an analytical process) would, however, constitute a failure. The "win" in the case was to recognize that the derived metrics must be recomputed after aggregation.*  
 
 <br>
 
@@ -257,12 +258,12 @@ For generations, baseball cards were an introduction to statistics and often to 
 <br>
 
 ### A Note on Data Science Skills
-Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. And, we used macro variables to capture and reuse summary statistics. We recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). And ultimately, we create a clean and reproducible report that updates a classic baseball card with modern slash stats.
+Watching Henry Aaron hit #715 and later rediscovering his baseball card illustrates how statistics tell a story. In this project, we used modern tools to retell that story with greater clarity and depth. We worked through a complete analytics workflow. We imported an existing CSV file, and wrote SAS code to engineer modern performance metrics. We used macro variables to capture and reuse summary statistics. We recomputed derived measures at the correct level of aggregation, avoiding the common mistake of averaging averages (or ratios). Ultimately, we created a clean and reproducible report that updates a classic baseball card with modern slash stats.
 
-These steps mirror how analysts work in any domain: the data was explored and considered, aggregated (correctly), metrics recomputed, and anaytical logic was created seperate from the presentation.
+These steps mirror how analysts work in any domain: the data was explored and considered, aggregated (correctly), metrics recomputed, and analytical logic was created separate from the presentation.
 
 <br>
 
 ### Next Up
-The Eras of the Game. How have changes to rules effected the game? What about changes in the manufacturer of baseballs, or even social change? We will look at runs scored throughout the history of the game and visualize how change has effected the scoring of runs from season to season.
+The Eras of the Game. How have changes to rules affected the game? What about changes in the manufacturer of baseballs, or even social change? We will look at runs scored throughout the history of the game and visualize how change has affected the scoring of runs from season to season.
 
