@@ -9,6 +9,12 @@
 
 ### History and Origins
 
+Baseball changes when rules change.  
+It changes when the ball itself changes.  
+It changes with expansion, integration, labor dynamics, performance-enhancing drugs, and analytics.  
+
+If those changes matter, they should leave a footprint in the data.  
+
 
 ### Building a Visualization for the Eras of Baseball
 
@@ -16,22 +22,13 @@
 
 The objective of this analysis is to create a visualization that clearly illustrates the Eras of Baseball and makes structural change visible over time.
 
-Baseball changes when rules change.  
-It changes when the ball itself changes.  
-It changes with expansion, integration, labor dynamics, performance-enhancing drugs, and analytics.  
 
-If those changes matter, they should leave a footprint in the data.  
+**Metrics and Formulas**
 
-Our task is to create a metric and then a visualization that allow those footprints to be seen.
+Runs Per Game (RPG)  = R / G
 
-**Metric and Formula**
+Runs per game is intentionally simple. It does not attempt to explain why offense changes, but it is expected to indicate when it does.
 
-Runs Per Game (RPG)  
-RPG - R/G  
-
-Runs per game is intentionally simple. It does not attempt to explain why offense changes—only whether it does.
-
-This makes it especially useful for historical analysis. When something significant changes in the game, it often appears here first.
 
 **Required Variables**
 
@@ -45,15 +42,15 @@ No player-level data is needed. This is a league-level question.
 
 - Export the result as a CSV file
 
-- Import the data into SAS Workbench
+- Import the CSV file into SAS Workbench
 
-- Calculate Runs Per Game at the team level
+- Calculate Runs Per Game at the team level (SAS Data Step)
 
-**Aggregate by season**
+- Aggregate by season (Proc Means)
 
-Assign each season to a historically meaningful era
+- Assign each season to a historically meaningful era (SAS Data Step)
 
-Visualize the result using PROC SGPLOT
+- Visualize the result using PROC SGPLOT
 
 Each step serves a purpose. None are accidental.  
 
@@ -68,13 +65,13 @@ Each step serves a purpose. None are accidental.
 
 ### Code / Implementation
 
+**SQL Query**  
 ``` SQL
-SQL Extraction
 select yearID, R, G
 from Teams;
 ```
 
-This query returns one row per team per season. At this stage, no aggregation is performed.
+*This query returns one row per team per season. At this stage, no aggregation is performed.*
 
 **Import the CSV File**
 ``` SAS
@@ -87,19 +84,19 @@ proc import datafile=mycsv
 run;
 ```
 
-A temporary dataset (temp) is created. This keeps the workflow reproducible and transparent.
+*A temporary dataset (temp) is created. This keeps the workflow reproducible and transparent.*
 
 Calculate Runs Per Game
 
 ``` SAS
 data rpg;
    set temp;
-   rpg = r / g;
+   RPG = r / g;
 run;
 ```
-Runs Per Game is calculated at the team-season level.
+*Runs Per Game (RPG) is calculated at the team-season level.*
 
-To move to a league-wide view for each season:
+Move to a league-wide view for each season
 
 ``` SAS
 proc means data=work.rpg nway;
@@ -109,12 +106,11 @@ proc means data=work.rpg nway;
 run;
 ```
 
+*This aggregation step is critical. We are no longer analyzing teams; we are analyzing eras.*
 
-This aggregation step is critical. We are no longer analyzing teams—we are analyzing eras.
+**Defining the Eras in Code**
 
-Defining the Eras
-
-Before visualizing the data, we explicitly encode baseball history into the dataset.
+Before visualizing the data, we explicitly encode baseball history (Eras) into the dataset.
 
 ``` SAS
 data avgRPG (keep=yearID era avgRPG);
@@ -137,12 +133,10 @@ data avgRPG (keep=yearID era avgRPG);
 run;
 ```
 
+*We are making our assumptions explicit. The visualization will now reflect both the data and our understanding of baseball history.*
 
-This step is not cosmetic.
+**Creating the Visualization**
 
-We are making our assumptions explicit. The visualization will now reflect both the data and our understanding of baseball history.
-
-Creating the Visualization
 ``` SAS
 proc sgplot data=avgRPG;
    title "Average Runs Per Game by Season";
@@ -162,11 +156,11 @@ proc sgplot data=avgRPG;
 run;
 ```
 
-Each point represents a season.
-Color distinguishes eras.
-Vertical reference lines mark transitions.
+*Each point represents a season.*
+*Color distinguishes eras.*
+*Vertical reference lines mark transitions.*
 
-The result is not merely a chart; it is a historical narrative expressed in data.
+*The result is not merely a chart; it is a historical narrative expressed in data. It tells a story!*
 
 ### Why Visualizations Matter
 
@@ -180,8 +174,8 @@ Regardless of which lever is pulled, if the change is meaningful, it often becom
 Baseball offers a uniquely rich setting to demonstrate this idea. Once the data is visualized, the questions arise naturally:
 
 Why does scoring jump here?
-Why does it flatten there?
-What changed—and why?
+Why does it decline there?
+What changed and why?
 
 ### A Note on Data Science Skills
 
