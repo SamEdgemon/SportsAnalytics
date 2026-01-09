@@ -172,7 +172,7 @@ proc sgplot data=avgRPG;
 run;
 ```
 
-![AvgRPG](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Images/avgRPG.png)
+![AvgRPG](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Images/avgRPG2.png)
 
 *Each point represents a season.*
 *Color distinguishes eras.*
