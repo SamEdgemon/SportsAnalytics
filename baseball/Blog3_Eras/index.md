@@ -96,6 +96,8 @@ from Teams;
 
 *This query returns one row per team per season. At this stage, no aggregation is performed.*  
 
+you can download the CSV file here.
+
 <br>
 
 **SAS Code**  
@@ -235,7 +237,7 @@ Once the data is visualized, the questions arise naturally:
 - Why does it decline there?
 - What changed—and why?  
 
-The visualization does not answer these questions.
+The visualization does not answer these questions.  
 It tells us where to look.  
 
 <br>
@@ -251,7 +253,7 @@ Adjusting interest rates? **Plot the data.**
 Increasing advertising frequency? **Plot the data.**
 When a question arose about the Eras of Baseball, what did we do? We plotted the data.    
 
-*Visualization is rarely the end of analysis.*
+*Visualization is rarely the end of analysis.*  
 *More often, it is the beginning of understanding.*  
 
 <br>
@@ -259,4 +261,4 @@ When a question arose about the Eras of Baseball, what did we do? We plotted the
 
 ### Next Up
 
-Bill James—and how asking better questions reshaped both the game of baseball and the way data is used to understand it.
+**Bill James**—and how asking better questions reshaped both the game of baseball and the way data is used to understand it.
