@@ -206,9 +206,7 @@ Why do runs spike here?
 Why do they collapse there?  
 
 Baseball historians have long grouped these patterns into what we call eras.
-For readers who want a deeper historical walkthrough of each era—rules, equipment, players, and cultural forces—I’ve created a companion reference document:
-
-The Eras of Baseball (PDF)
+For readers who want a deeper historical walkthrough of each era—rules, equipment, players, and cultural forces—I’ve created a companion reference document: [Download the full analysis (PDF)](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/ErasBaseball.pdf)
 *(A historical guide aligned with the visualization above)*
 
 <br>
