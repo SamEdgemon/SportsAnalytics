@@ -81,21 +81,24 @@ See the Resources section for access to SAS Workbench.
 
 **SQL Query**  
 
-I'm using SQKLite to query the database.  
+I'm using SQLite to query the database.  
 
 ``` SQL
 select yearID, R, G
 from Teams;
 ```
 
-*This query returns one row per team per season. At this stage, no aggregation is performed.*
+*This query returns one row per team per season. At this stage, no aggregation is performed.*  
+
 
 **SAS Code**  
 
 We will use **SAS Workbench** to complete this task. You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.  
 
 
-***Import the CSV File***
+
+***Import the CSV File***  
+
 ``` SAS
 filename mycsv "<your directory path>/rpg00.csv";
 proc import datafile=mycsv
@@ -108,6 +111,7 @@ run;
 
 *A temporary dataset called temp is created.*  
 
+<br>
 
 ***Calculate Runs Per Game (RPG)***
 
@@ -119,6 +123,7 @@ run;
 ```
 *Runs Per Game (RPG) is calculated at the team-season level.*  
 
+<br>
 
 ***Aggregate RPG for each season***  
 
@@ -132,6 +137,7 @@ run;
 
 *This aggregation step is critical. We are no longer analyzing teams; we are analyzing eras.*  
 
+<br>
 
 ***Defining the Eras in Code***
 
@@ -159,6 +165,8 @@ run;
 ```
 
 *We are making our assumptions explicit. The visualization will now reflect both the data and our understanding of baseball history.*  
+
+<br>
 
 
 **Creating the Visualization**
@@ -203,7 +211,7 @@ For readers who want a deeper historical walkthrough of each era—rules, equipm
 The Eras of Baseball (PDF)
 *(A historical guide aligned with the visualization above)*
 
-
+<br>
 
 ### Why Visualizations Matter
 
@@ -223,7 +231,9 @@ Once the data is visualized, the questions arise naturally:
 - What changed—and why?  
 
 The visualization does not answer these questions.
-It tells us where to look.
+It tells us where to look.  
+
+<br>
 
 ### A Note on Data Science Skills
 
@@ -238,6 +248,8 @@ When a question arose about the Eras of Baseball, what did we do? We plotted the
 
 *Visualization is rarely the end of analysis.*
 *More often, it is the beginning of understanding.*  
+
+<br>
 
 
 ### Next Up
