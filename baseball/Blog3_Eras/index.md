@@ -9,50 +9,62 @@
 
 ### History and Origins
 
-Baseball changes when rules change.  
-It changes when the ball itself changes.  
-It changes with expansion, integration, labor dynamics, performance-enhancing drugs, and analytics.  
+The game of baseball changes when rules change.
+It changes when the ball itself is manufactured differently, or when materials evolve.
+It changes with league expansion, labor dynamics, performance-enhancing drugs, and, more recently, analytics.  
 
-If those changes matter, they should leave a footprint in the data.  
+When meaningful change occurs, it leaves a trace.
+If we know where to look, those changes can be detected visually in the data.  
 
+Baseball fans often describe these shifts in terms of Eras. From the rough-and-tumble 19th Century to the modern age of analytics, the game has continually evolved. Rules changed. Strategies shifted. Players adapted. Each era tells a story—not just about baseball, but about the culture and conditions that shaped it.  
+
+In this blog, we’ll walk through the major Eras of baseball with a specific purpose: to see how change reveals itself in the data. By examining runs scored per game across seasons, we can observe when the game fundamentally shifted—and begin to ask why. Whether you're a lifelong fan, a student of the game, or just baseball-curious, this approach offers a clear example of how data helps us understand change over time.  
+ 
 
 ### Building a Visualization for the Eras of Baseball
 
 **Objective**
 
-The objective of this analysis is to create a visualization that clearly illustrates the Eras of Baseball and makes structural change visible over time.
+The objective is to create a visualization that clearly illustrates the Eras of Baseball such that structural change is visible over time.  
+
+We will visualize "change" by looking at the average Runs Per Game (RPG) scored each season.
 
 
 **Metrics and Formulas**
 
 Runs Per Game (RPG)  = R / G
 
-Runs per game is intentionally simple. It does not attempt to explain why offense changes, but it is expected to indicate when it does.
+Runs per game is intentionally simple. It does not attempt to explain why offense changes, but it is well-suited to indicate when it does. When meaningful change occurs in the game, we expect to see it reflected in this metric.  
 
 
 **Required Variables**
 
-From the Teams table in Lahman’s Baseball Database, we require: yearID, R, G  
+From the Teams table in Lahman’s Baseball Database, we require:   
+- yearID
+- R (runs scored)
+- G (games played)    
 
 No player-level data is needed. This is a league-level question.
 
-**Workflow**
+**Workflow**  
 
-- Extract historical team data from Lahman’s Baseball Database
+The workflow for this analysis is as follows:
+
+- Extract historical team data from Lahman’s Baseball Database (SQL)
 
 - Export the result as a CSV file
 
-- Import the CSV file into SAS Workbench
+- Import the CSV file into SAS Workbench (PROC IMPORT)
 
 - Calculate Runs Per Game at the team level (SAS Data Step)
 
-- Aggregate by season (Proc Means)
+- Aggregate by season (PROC MEANS)
 
 - Assign each season to a historically meaningful era (SAS Data Step)
 
 - Visualize the result using PROC SGPLOT
 
-Each step serves a purpose. None are accidental.  
+Each step serves a purpose: extracting raw data, transforming it into a meaningful metric, aggregating it correctly, and finally presenting it in a way that allows change to be seen.
 
 
 **Data and Tools**
@@ -62,6 +74,8 @@ Each step serves a purpose. None are accidental.
 - SQLite for querying and extracting data
 
 - SAS Workbench for data preparation, aggregation, and visualization
+
+See the Resources section for access to SAS Workbench.
 
 ### Code / Implementation
 
@@ -73,7 +87,9 @@ from Teams;
 
 *This query returns one row per team per season. At this stage, no aggregation is performed.*
 
-**Import the CSV File**
+**SAS Code**  
+
+***Import the CSV File***
 ``` SAS
 filename mycsv "<your directory path>/rpg00.csv";
 proc import datafile=mycsv
@@ -84,19 +100,19 @@ proc import datafile=mycsv
 run;
 ```
 
-*A temporary dataset (temp) is created. This keeps the workflow reproducible and transparent.*
+*A temporary dataset called temp is created.*
 
-Calculate Runs Per Game
+***Calculate Runs Per Game (RPG)***
 
 ``` SAS
 data rpg;
    set temp;
-   RPG = r / g;
+   RPG = R / G;
 run;
 ```
 *Runs Per Game (RPG) is calculated at the team-season level.*
 
-Move to a league-wide view for each season
+***Aggregate RPG for each season***
 
 ``` SAS
 proc means data=work.rpg nway;
@@ -108,9 +124,9 @@ run;
 
 *This aggregation step is critical. We are no longer analyzing teams; we are analyzing eras.*
 
-**Defining the Eras in Code**
+***Defining the Eras in Code***
 
-Before visualizing the data, we explicitly encode baseball history (Eras) into the dataset.
+For visualization, we explicitly encode baseball history (Eras) into the dataset.
 
 ``` SAS
 data avgRPG (keep=yearID era avgRPG);
@@ -156,11 +172,26 @@ proc sgplot data=avgRPG;
 run;
 ```
 
+![AvgRPG](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Images/avgRPG.png)
+
 *Each point represents a season.*
 *Color distinguishes eras.*
-*Vertical reference lines mark transitions.*
+*Vertical reference lines help anchor historical transitions.*
 
 *The result is not merely a chart; it is a historical narrative expressed in data. It tells a story!*
+*And like all good stories, it becomes clearer when structure is made visiible.*  
+
+The chart above raises obvious questions.
+Why do runs spike here?
+Why do they collapse there?  
+
+Baseball historians have long grouped these patterns into what we call eras.
+For readers who want a deeper historical walkthrough of each era—rules, equipment, players, and cultural forces—I’ve created a companion reference document:
+
+The Eras of Baseball (PDF)
+*(A historical guide aligned with the visualization above)*
+
+
 
 ### Why Visualizations Matter
 
@@ -169,25 +200,32 @@ Baseballs change.
 The league expands.
 Performance-enhancing drugs appear—and later disappear.
 
-Regardless of which lever is pulled, if the change is meaningful, it often becomes visible when the right metric is plotted over time.
+When a change is meaningful, it often becomes visible once the right metric is plotted over time.
 
-Baseball offers a uniquely rich setting to demonstrate this idea. Once the data is visualized, the questions arise naturally:
+Baseball provides a uniquely rich environment to demonstrate this principle. Its long history, consistent record-keeping, and well-documented rule changes make it an ideal case study for understanding structural change through data.
 
-Why does scoring jump here?
-Why does it decline there?
-What changed and why?
+Once the data is visualized, the questions arise naturally:
+
+- Why does scoring jump here?
+- Why does it decline there?
+- What changed—and why?  
+
+The visualization does not answer these questions.
+It tells us where to look.
 
 ### A Note on Data Science Skills
 
-In analytics, evidence of impact is often revealed not through complexity, but through clarity.
+In analytics, evidence of impact is often revealed not through complexity, but through clarity.  
+
+One of the most important skills a data scientist can develop is the ability to detect change.  
 
 Changing materials on a manufacturing line? Plot the data.
 Adjusting interest rates? Plot the data.
-Increasing advertising frequency? Plot the data.
+Increasing advertising frequency? Plot the data.  
 
 Visualization is rarely the end of analysis.
-More often, it is the beginning of understanding.
+More often, it is the beginning of understanding.  
 
 ### Next Up
 
-Bill James, and how asking better questions reshaped the way the game—and data—are understood.
+Bill James—and how asking better questions reshaped both the game of baseball and the way data is used to understand it.

@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="SAS V.04.00" name="generator"/>
+<title>SAS Output</title>
+<style>
+/*<![CDATA[*/
+.body.c > table, .body.c > pre, .body.c div > table,
+.body.c div > pre, .body.c > table, .body.c > pre,
+.body.j > table, .body.j > pre, .body.j div > table,
+.body.j div > pre, .body.j > table, .body.j > pre,
+.body.c p.note, .body.c p.warning, .body.c p.error, .body.c p.fatal,
+.body.j p.note, .body.j p.warning, .body.j p.error, .body.j p.fatal,
+.body.c > table.layoutcontainer, .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.layoutregion.l table, .layoutregion.l pre, .layoutregion.l p.note,
+.layoutregion.l p.warning, .layoutregion.l p.error, .layoutregion.l p.fatal { margin-left: 0 }
+.layoutregion.c table, .layoutregion.c pre, .layoutregion.c p.note,
+.layoutregion.c p.warning, .layoutregion.c p.error, .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r table, .layoutregion.r pre, .layoutregion.r p.note,
+.layoutregion.r p.warning, .layoutregion.r p.error, .layoutregion.r p.fatal { margin-right: 0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+html{ font-size: 100% }
+.body { margin: 1em; font-size: 13px; line-height: 1.231 }
+sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+ul, ol { margin: 1em 0; padding: 0 0 0 40px }
+dd { margin: 0 0 0 40px }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+img { border: 0; vertical-align: middle }
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+.layoutcontainer { border-collapse: separate; border-spacing: 0 }
+p { margin-top: 0; text-align: left }
+h1.heading1 { text-align: left }
+h2.heading2 { text-align: left }
+h3.heading3 { text-align: left }
+h4.heading4 { text-align: left }
+h5.heading5 { text-align: left }
+h6.heading6 { text-align: left }
+span { text-align: left }
+table { margin-bottom: 1em }
+td, th { text-align: left; padding: 3px 6px; vertical-align: top }
+td[class$="fixed"], th[class$="fixed"] { white-space: pre }
+section, article { padding-top: 1px; padding-bottom: 8px }
+hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.stacked-value { text-align: left; display: block }
+.stacked-cell > .stacked-value, td.data > td.data, th.data > td.data, th.data > th.data, td.data > th.data, th.header > th.header { border: 0 }
+.stacked-cell > div.data { border-width: 0 }
+.systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.systitleandfootercontainer > p { margin: 0 }
+.systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.batch { display: table }
+.toc { display: none }
+.proc_note_group, .proc_title_group { margin-bottom: 1em }
+p.proctitle { margin: 0 }
+p.note, p.warning, p.error, p.fatal { display: table }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner,
+.notecontent, .warncontent, .errorcontent, .fatalcontent { display: table-cell; padding: 0.5em }
+.notebanner, .warnbanner, .errorbanner, .fatalbanner { padding-right: 0 }
+.body > div > ol li { text-align: left }
+.beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.c { text-align: center }
+.r { text-align: right }
+.l { text-align: left }
+.j { text-align: justify }
+.d { text-align: right }
+.b { vertical-align: bottom }
+.m { vertical-align: middle }
+.t { vertical-align: top }
+.accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+}
+a:active { color: #800080 }
+.aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.batch > tbody, .batch > thead, .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.batch { border: hidden; }
+.batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: 7pt;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.bycontentfolder {
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.bylinecontainer > col, .bylinecontainer > colgroup > col, .bylinecontainer > colgroup, .bylinecontainer > tr, .bylinecontainer > * > tr, .bylinecontainer > thead, .bylinecontainer > tbody, .bylinecontainer > tfoot { border: none; }
+.bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.cell, .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.contentfolder, .contentitem {
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.contentproclabel, .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: bold;
+}
+.continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.data, .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.folderaction {
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.graph > tbody, .graph > thead, .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.graph { border: hidden; }
+.graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    }
+.header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading1 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 24pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 18pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading3 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 14pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading4 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading5 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 10pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.heading6 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.indexaction, .indexitem {
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: bold;
+}
+.layoutcontainer, .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+a:link { color: #0000ff }
+.list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.list3, .list4, .list5, .list6, .list7, .list8, .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.listitem3, .listitem4, .listitem5, .listitem6, .listitem7, .listitem8, .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.output > tbody, .output > thead, .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.output { border: hidden; }
+.output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    }
+.pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.pagesitem {
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.pagesproclabel, .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: bold;
+}
+.paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.parskip > col, .parskip > colgroup > col, .parskip > colgroup, .parskip > tr, .parskip > * > tr, .parskip > thead, .parskip > tbody, .parskip > tfoot { border: none; }
+.parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+    }
+.prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.systemfooter, .systemfooter10, .systemfooter2, .systemfooter3, .systemfooter4, .systemfooter5, .systemfooter6, .systemfooter7, .systemfooter8, .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.systemtitle, .systemtitle10, .systemtitle2, .systemtitle3, .systemtitle4, .systemtitle5, .systemtitle6, .systemtitle7, .systemtitle8, .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.systitleandfootercontainer > col, .systitleandfootercontainer > colgroup > col, .systitleandfootercontainer > colgroup, .systitleandfootercontainer > tr, .systitleandfootercontainer > * > tr, .systitleandfootercontainer > thead, .systitleandfootercontainer > tbody, .systitleandfootercontainer > tfoot { border: none; }
+.systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.table > col, .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.table > tr, .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.table { border: hidden; }
+.table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.titleandnotecontainer > col, .titleandnotecontainer > colgroup > col, .titleandnotecontainer > colgroup, .titleandnotecontainer > tr, .titleandnotecontainer > * > tr, .titleandnotecontainer > thead, .titleandnotecontainer > tbody, .titleandnotecontainer > tfoot { border: none; }
+.titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+a:visited { color: #800080 }
+.warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: bold;
+}
+.warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Anova UI', Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+}
+.warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: 8pt;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+
+         <style>html,body { height: 100% !important; }</style></head>
+<body data-vscode-context='{"preventDefaultContextMenuItems":true,"panelId":"2fe85766-06dd-40b0-9668-4f32c5cc5b49"}' class="c body">
+<div style="padding-bottom: 8px; padding-top: 1px">
+<div id="IDX" style="padding-bottom: 8px; padding-top: 1px">
+<div class="c">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" baseProfile="full" version="1.1" id="SVG_IDX" onload='SVG_IDX_Init("SVG_IDX")' viewBox="-1 -1 1201 901" height="900" width="1200">
+<title>Average Runs Per Game by Season;  ;</title>
+<desc id="desc_SVG_IDX">The SGPlot Procedure</desc>
+<defs>
+<clipPath id="SVG_IDX_clipPage1">
+<rect x="-1" y="-1" width="1201" height="901"></rect>
+</clipPath>
+</defs>
+<g id="SVG_IDX_Page1" clip-path="url(#SVG_IDX_clipPage1)">
+<g transform=" scale(1, 1)">
+<rect x="0" y="0" width="1199" height="899" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="1199" height="899" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="0" width="1199" height="899" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 20, 20)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath0">
+<rect x="-1" y="-1" width="1161" height="861" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath0)">
+<g transform="matrix(1, 0, 0, 1, 0, 54)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath1">
+<rect x="-1" y="-1" width="1161" height="748" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath1)">
+<rect x="66.44272" y="91.33101" width="1085.06459" height="595.30778" style="fill: #FFFFFF; "></rect>
+<defs>
+<clipPath id="SVG_IDX_ClipPath2">
+<rect x="65" y="90" width="1088" height="598" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath2)">
+<circle cx="144.04641" cy="99.82113" r="4" style="fill: #445694; "></circle>
+<circle cx="150.32922" cy="240.30803" r="4" style="fill: #445694; "></circle>
+<circle cx="156.61204" cy="284.07048" r="4" style="fill: #445694; "></circle>
+<circle cx="162.89486" cy="351.09163" r="4" style="fill: #445694; "></circle>
+<circle cx="169.17768" cy="511.39708" r="4" style="fill: #445694; "></circle>
+<circle cx="175.4605" cy="471.10398" r="4" style="fill: #445694; "></circle>
+<circle cx="181.74332" cy="489.08742" r="4" style="fill: #445694; "></circle>
+<circle cx="188.02614" cy="529.38201" r="4" style="fill: #445694; "></circle>
+<circle cx="194.30896" cy="521.95781" r="4" style="fill: #445694; "></circle>
+<circle cx="200.59178" cy="569.92568" r="4" style="fill: #445694; "></circle>
+<circle cx="206.8746" cy="535.88181" r="4" style="fill: #445694; "></circle>
+<circle cx="213.15742" cy="516.9149" r="4" style="fill: #445694; "></circle>
+<circle cx="219.44023" cy="481.38498" r="4" style="fill: #445694; "></circle>
+<circle cx="225.72305" cy="530.25606" r="4" style="fill: #445694; "></circle>
+<circle cx="232.00587" cy="526.16489" r="4" style="fill: #445694; "></circle>
+<circle cx="238.28869" cy="504.94518" r="4" style="fill: #445694; "></circle>
+<circle cx="244.57151" cy="432.74801" r="4" style="fill: #445694; "></circle>
+<circle cx="250.85433" cy="554.52019" r="4" style="fill: #445694; "></circle>
+<circle cx="257.13715" cy="463.77102" r="4" style="fill: #445694; "></circle>
+<circle cx="263.41997" cy="462.3502" r="4" style="fill: #445694; "></circle>
+<circle cx="269.70279" cy="484.02717" r="4" style="fill: #445694; "></circle>
+<circle cx="275.98561" cy="534.77708" r="4" style="fill: #445694; "></circle>
+<circle cx="282.26842" cy="413.64928" r="4" style="fill: #445694; "></circle>
+<circle cx="288.55124" cy="345.21381" r="4" style="fill: #445694; "></circle>
+<circle cx="294.83406" cy="411.09869" r="4" style="fill: #445694; "></circle>
+<circle cx="301.11688" cy="457.77825" r="4" style="fill: #445694; "></circle>
+<circle cx="307.3997" cy="468.84173" r="4" style="fill: #445694; "></circle>
+<circle cx="313.68252" cy="547.10235" r="4" style="fill: #445694; "></circle>
+<circle cx="319.96534" cy="522.86653" r="4" style="fill: #445694; "></circle>
+<circle cx="326.24816" cy="525.09698" r="4" style="fill: #445694; "></circle>
+<circle cx="332.53098" cy="544.17213" r="4" style="fill: #445694; "></circle>
+<circle cx="338.8138" cy="590.08128" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="345.09662" cy="590.71349" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="351.37944" cy="649.44583" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="357.66225" cy="635.54428" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="363.94507" cy="658.68308" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="370.22789" cy="665.97444" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="376.51071" cy="678.14866" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="382.79353" cy="664.27272" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="389.07635" cy="640.17382" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="395.35917" cy="584.32205" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="401.64199" cy="582.96945" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="407.92481" cy="623.93573" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="414.20762" cy="638.07697" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="420.49044" cy="642.4389" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="426.77326" cy="663.15199" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="433.05608" cy="661.15527" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="439.3389" cy="657.39506" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="445.62172" cy="637.61715" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="451.90454" cy="596.94137" r="4" style="fill: #A23A2E; "></circle>
+<circle cx="458.18736" cy="555.88267" r="4" style="fill: #01665E; "></circle>
+<circle cx="464.47018" cy="554.72492" r="4" style="fill: #01665E; "></circle>
+<circle cx="470.753" cy="559.13394" r="4" style="fill: #01665E; "></circle>
+<circle cx="477.03582" cy="563.80022" r="4" style="fill: #01665E; "></circle>
+<circle cx="483.31864" cy="533.25634" r="4" style="fill: #01665E; "></circle>
+<circle cx="489.60145" cy="574.21756" r="4" style="fill: #01665E; "></circle>
+<circle cx="495.88427" cy="564.74954" r="4" style="fill: #01665E; "></circle>
+<circle cx="502.16709" cy="566.28221" r="4" style="fill: #01665E; "></circle>
+<circle cx="508.44991" cy="528.48794" r="4" style="fill: #01665E; "></circle>
+<circle cx="514.73273" cy="498.39562" r="4" style="fill: #01665E; "></circle>
+<circle cx="521.01555" cy="559.64277" r="4" style="fill: #01665E; "></circle>
+<circle cx="527.29837" cy="551.10823" r="4" style="fill: #01665E; "></circle>
+<circle cx="533.58119" cy="586.6557" r="4" style="fill: #01665E; "></circle>
+<circle cx="539.86401" cy="551.87063" r="4" style="fill: #01665E; "></circle>
+<circle cx="546.14683" cy="552.33628" r="4" style="fill: #01665E; "></circle>
+<circle cx="552.42964" cy="528.15143" r="4" style="fill: #01665E; "></circle>
+<circle cx="558.71246" cy="554.81454" r="4" style="fill: #01665E; "></circle>
+<circle cx="564.99528" cy="552.9412" r="4" style="fill: #01665E; "></circle>
+<circle cx="571.2781" cy="558.54394" r="4" style="fill: #01665E; "></circle>
+<circle cx="577.56092" cy="570.70014" r="4" style="fill: #01665E; "></circle>
+<circle cx="583.84374" cy="586.41728" r="4" style="fill: #01665E; "></circle>
+<circle cx="590.12656" cy="620.26141" r="4" style="fill: #543005; "></circle>
+<circle cx="596.40938" cy="633.97379" r="4" style="fill: #543005; "></circle>
+<circle cx="602.6922" cy="613.18104" r="4" style="fill: #543005; "></circle>
+<circle cx="608.97502" cy="612.06042" r="4" style="fill: #543005; "></circle>
+<circle cx="615.25784" cy="626.39627" r="4" style="fill: #543005; "></circle>
+<circle cx="621.54065" cy="597.55326" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="627.82347" cy="578.96104" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="634.10629" cy="576.62573" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="640.38911" cy="556.26745" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="646.67193" cy="581.60015" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="652.95475" cy="612.19411" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="659.23757" cy="576.4637" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="665.52039" cy="595.666" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="671.80321" cy="586.58688" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="678.08603" cy="589.35432" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="684.36884" cy="601.48933" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="690.65166" cy="603.42263" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="696.93448" cy="595.08398" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="703.2173" cy="600.8647" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="709.50012" cy="583.36724" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="715.78294" cy="588.84552" r="4" style="fill: #9D3CDB; "></circle>
+<circle cx="722.06576" cy="631.32102" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="728.34858" cy="623.99295" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="734.6314" cy="627.86276" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="740.91422" cy="627.47434" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="747.19704" cy="646.18837" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="753.47986" cy="675.30747" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="759.76267" cy="620.9252" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="766.04549" cy="598.56484" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="772.32831" cy="636.16562" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="778.61113" cy="652.92508" r="4" style="fill: #7F8E1F; "></circle>
+<circle cx="784.89395" cy="609.17604" r="4" style="fill: #2597FA; "></circle>
+<circle cx="791.17677" cy="616.5643" r="4" style="fill: #2597FA; "></circle>
+<circle cx="797.45959" cy="609.25761" r="4" style="fill: #2597FA; "></circle>
+<circle cx="803.74241" cy="627.3517" r="4" style="fill: #2597FA; "></circle>
+<circle cx="810.02523" cy="587.86353" r="4" style="fill: #2597FA; "></circle>
+<circle cx="816.30805" cy="618.38697" r="4" style="fill: #2597FA; "></circle>
+<circle cx="822.59087" cy="588.68084" r="4" style="fill: #2597FA; "></circle>
+<circle cx="828.87368" cy="602.99043" r="4" style="fill: #2597FA; "></circle>
+<circle cx="835.1565" cy="627.01934" r="4" style="fill: #2597FA; "></circle>
+<circle cx="841.43932" cy="602.258" r="4" style="fill: #2597FA; "></circle>
+<circle cx="847.72214" cy="601.35932" r="4" style="fill: #2597FA; "></circle>
+<circle cx="854.00496" cy="605.64082" r="4" style="fill: #2597FA; "></circle>
+<circle cx="860.28778" cy="599.46033" r="4" style="fill: #2597FA; "></circle>
+<circle cx="866.5706" cy="593.01492" r="4" style="fill: #2597FA; "></circle>
+<circle cx="872.85342" cy="566.92168" r="4" style="fill: #2597FA; "></circle>
+<circle cx="879.13624" cy="615.49823" r="4" style="fill: #2597FA; "></circle>
+<circle cx="885.41906" cy="615.95874" r="4" style="fill: #2597FA; "></circle>
+<circle cx="891.70188" cy="605.65375" r="4" style="fill: #2597FA; "></circle>
+<circle cx="897.98469" cy="601.40091" r="4" style="fill: #2597FA; "></circle>
+<circle cx="904.26751" cy="617.21771" r="4" style="fill: #2597FA; "></circle>
+<circle cx="910.55033" cy="577.30717" r="4" style="fill: #2597FA; "></circle>
+<circle cx="916.83315" cy="550.15626" r="4" style="fill: #B26084; "></circle>
+<circle cx="923.11597" cy="556.63968" r="4" style="fill: #B26084; "></circle>
+<circle cx="929.39879" cy="540.95018" r="4" style="fill: #B26084; "></circle>
+<circle cx="935.68161" cy="563.24516" r="4" style="fill: #B26084; "></circle>
+<circle cx="941.96443" cy="561.37185" r="4" style="fill: #B26084; "></circle>
+<circle cx="948.24725" cy="536.89807" r="4" style="fill: #B26084; "></circle>
+<circle cx="954.53007" cy="532.24699" r="4" style="fill: #B26084; "></circle>
+<circle cx="960.81288" cy="562.54149" r="4" style="fill: #B26084; "></circle>
+<circle cx="967.0957" cy="575.62337" r="4" style="fill: #B26084; "></circle>
+<circle cx="973.37852" cy="566.50645" r="4" style="fill: #B26084; "></circle>
+<circle cx="979.66134" cy="559.39288" r="4" style="fill: #B26084; "></circle>
+<circle cx="985.94416" cy="577.80106" r="4" style="fill: #D17800; "></circle>
+<circle cx="992.22698" cy="555.71204" r="4" style="fill: #D17800; "></circle>
+<circle cx="998.5098" cy="560.77492" r="4" style="fill: #D17800; "></circle>
+<circle cx="1004.79262" cy="572.90425" r="4" style="fill: #D17800; "></circle>
+<circle cx="1011.07544" cy="576.05731" r="4" style="fill: #D17800; "></circle>
+<circle cx="1017.35826" cy="595.01956" r="4" style="fill: #D17800; "></circle>
+<circle cx="1023.64107" cy="603.4283" r="4" style="fill: #D17800; "></circle>
+<circle cx="1029.92389" cy="599.99176" r="4" style="fill: #D17800; "></circle>
+<circle cx="1036.20671" cy="613.16167" r="4" style="fill: #D17800; "></circle>
+<circle cx="1042.48953" cy="621.45256" r="4" style="fill: #D17800; "></circle>
+<circle cx="1048.77235" cy="606.16969" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1055.05517" cy="587.26934" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1061.33799" cy="573.2512" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1067.62081" cy="589.70657" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1073.90363" cy="557.99263" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1080.18645" cy="573.38229" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1086.46927" cy="582.86248" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1092.75208" cy="603.40909" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1099.0349" cy="575.81419" r="4" style="fill: #47A82A; "></circle>
+<circle cx="1105.31772" cy="594.26785" r="4" style="fill: #47A82A; "></circle>
+<path d="M144.04641 687.13821L144.04641 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M144 92L144.04641 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M338.8138 687.13821L338.8138 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M339 92L338.8138 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M458.18736 687.13821L458.18736 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M458 92L458.18736 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M590.12656 687.13821L590.12656 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M590 92L590.12656 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M621.54065 687.13821L621.54065 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M622 92L621.54065 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M722.06576 687.13821L722.06576 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M722 92L722.06576 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M784.89395 687.13821L784.89395 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M785 92L784.89395 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M916.83315 687.13821L916.83315 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M917 92L916.83315 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M985.94416 687.13821L985.94416 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M986 92L985.94416 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+<path d="M1048.77235 687.13821L1048.77235 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; stroke-dasharray: 4,4; "></path>
+<path d="M1049 92L1048.77235 90.83159" style="stroke: #FF0000; stroke-width: 1; fill: none; "></path>
+</g>
+<defs>
+<clipPath id="SVG_IDX_ClipPath3">
+<rect x="-1" y="-1" width="1161" height="748" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath3)">
+<path d="M65.94315 687.13821L1152.00689 687.13821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M1152.00689 687.13821L1152.00689 90.83159" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M65.94315 90.83159L1152.00689 90.83159" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M65.94315 687.13821L65.94315 90.83159" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M65.94315 687.13821L1152.00689 687.13821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M74.9354 687.13821L74.9354 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 58.9354, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000038;&#x000036;&#x000030;</text>
+</g>
+<path d="M137.76359 687.13821L137.76359 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 121.76359, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000038;&#x000037;&#x000030;</text>
+</g>
+<path d="M200.59178 687.13821L200.59178 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 184.59178, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000038;&#x000038;&#x000030;</text>
+</g>
+<path d="M263.41997 687.13821L263.41997 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 247.41997, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000038;&#x000039;&#x000030;</text>
+</g>
+<path d="M326.24816 687.13821L326.24816 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 310.24816, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000030;&#x000030;</text>
+</g>
+<path d="M389.07635 687.13821L389.07635 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 373.07635, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000031;&#x000030;</text>
+</g>
+<path d="M451.90454 687.13821L451.90454 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 435.90454, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000032;&#x000030;</text>
+</g>
+<path d="M514.73273 687.13821L514.73273 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 498.73273, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000033;&#x000030;</text>
+</g>
+<path d="M577.56092 687.13821L577.56092 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 561.56092, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000034;&#x000030;</text>
+</g>
+<path d="M640.38911 687.13821L640.38911 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 624.38911, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000035;&#x000030;</text>
+</g>
+<path d="M703.2173 687.13821L703.2173 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 687.2173, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000036;&#x000030;</text>
+</g>
+<path d="M766.04549 687.13821L766.04549 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 750.04549, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000037;&#x000030;</text>
+</g>
+<path d="M828.87368 687.13821L828.87368 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 812.87368, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000038;&#x000030;</text>
+</g>
+<path d="M891.70188 687.13821L891.70188 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 875.70187, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000039;&#x000030;</text>
+</g>
+<path d="M954.53007 687.13821L954.53007 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 938.53007, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000032;&#x000030;&#x000030;&#x000030;</text>
+</g>
+<path d="M1017.35826 687.13821L1017.35826 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 1001.35826, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000032;&#x000030;&#x000031;&#x000030;</text>
+</g>
+<path d="M1080.18645 687.13821L1080.18645 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 1064.18645, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000032;&#x000030;&#x000032;&#x000030;</text>
+</g>
+<path d="M1143.01464 687.13821L1143.01464 694.33821" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 1127.01464, 712.83821)">
+<text textLength="32" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000032;&#x000030;&#x000033;&#x000030;</text>
+</g>
+<g transform="matrix(1, 0, 0, 1, 581.9608, 741.8382)">
+<text textLength="55" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 16px; white-space: pre; ">&#x000053;&#x000065;&#x000061;&#x000073;&#x00006F;&#x00006E;</text>
+</g>
+<path d="M65.94315 687.13821L65.94315 90.83159" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<path d="M65.94315 626.93737L58.74098 626.93737" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 46.23963, 631.93737)">
+<text textLength="8" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000034;</text>
+</g>
+<path d="M65.94315 460.85538L58.74098 460.85538" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 46.23963, 465.85538)">
+<text textLength="8" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000036;</text>
+</g>
+<path d="M65.94315 294.77339L58.74098 294.77339" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 46.23963, 299.77339)">
+<text textLength="8" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000038;</text>
+</g>
+<path d="M65.94315 128.69141L58.74098 128.69141" style="stroke: #989EA1; stroke-width: 1; fill: none; "></path>
+<g transform="matrix(1, 0, 0, 1, 38.23963, 133.69141)">
+<text textLength="16" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000030;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 16.23422, 462.9849)">
+<text textLength="148" lengthAdjust="spacingAndGlyphs" x="0" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 16px; white-space: pre; ">&#x000041;&#x000076;&#x000067;&#x000020;&#x000052;&#x000075;&#x00006E;&#x000073;&#x000020;&#x000050;&#x000065;&#x000072;&#x000020;&#x000047;&#x000061;&#x00006D;&#x000065;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 148.87596, 87.83507)">
+<text textLength="68" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000074;&#x000068;&#x000020;&#x000043;&#x000065;&#x00006E;&#x000074;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 343.70801, 87.83507)">
+<text textLength="66" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000044;&#x000065;&#x000061;&#x000064;&#x000020;&#x000042;&#x000061;&#x00006C;&#x00006C;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 462.60551, 87.83507)">
+<text textLength="59" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x00004C;&#x000069;&#x000076;&#x000065;&#x000020;&#x000042;&#x000061;&#x00006C;&#x00006C;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 594.49181, 87.83507)">
+<text textLength="41" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000057;&#x000057;&#x000049;&#x000049;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 626.46425, 87.83507)">
+<text textLength="77" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000049;&#x00006E;&#x000074;&#x000065;&#x000067;&#x000072;&#x000061;&#x000074;&#x000069;&#x00006F;&#x00006E;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 726.37812, 87.83507)">
+<text textLength="71" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000045;&#x000078;&#x000070;&#x000061;&#x00006E;&#x000073;&#x000069;&#x00006F;&#x00006E;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 789.32385, 87.83507)">
+<text textLength="52" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000046;&#x000041;&#x00002F;&#x000044;&#x000048;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 921.21016, 87.83507)">
+<text textLength="52" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000053;&#x000074;&#x000065;&#x000072;&#x00006F;&#x000069;&#x000064;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 990.15073, 87.83507)">
+<text textLength="85" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000050;&#x00006F;&#x000073;&#x000074;&#x000020;&#x000053;&#x000074;&#x000065;&#x000072;&#x00006F;&#x000069;&#x000064;</text>
+</g>
+<g transform="matrix(0, -1, 1, 0, 1053.09646, 87.83507)">
+<text textLength="66" lengthAdjust="spacingAndGlyphs" x="3" y="0.5" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000041;&#x00006E;&#x000061;&#x00006C;&#x000079;&#x000074;&#x000069;&#x000063;&#x000073;</text>
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 77, 801)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath4">
+<rect x="-1" y="-1" width="1065" height="60" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath4)">
+<rect x="0" y="19" width="1063" height="39" style="fill: #FFFFFF; "></rect>
+<rect x="0" y="19" width="1063" height="39" style="stroke: #D1D1D1; stroke-width: 1; fill: none; "></rect>
+<g transform="matrix(1, 0, 0, 1, 1059, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath5">
+<rect x="-1" y="-1" width="5" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath5)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 953, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath6">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath6)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 828, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath7">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath7)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 736, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath8">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath8)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 644, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath9">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath9)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 533, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath10">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath10)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 416, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath11">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath11)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 332, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath12">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath12)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 233, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath13">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath13)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 127, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath14">
+<rect x="-1" y="-1" width="9" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath14)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 1, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath15">
+<rect x="-1" y="-1" width="5" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath15)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 1059, 20)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath16">
+<rect x="-1" y="-1" width="5" height="21" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath16)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 1, 20)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath17">
+<rect x="-1" y="-1" width="5" height="21" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath17)">
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 984, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath18">
+<rect x="-1" y="-1" width="76" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath18)">
+<text textLength="63" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000041;&#x00006E;&#x000061;&#x00006C;&#x000079;&#x000074;&#x000069;&#x000063;&#x000073;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 961, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath19">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath19)">
+<circle cx="11" cy="7" r="4" style="fill: #47A82A; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 859, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath20">
+<rect x="-1" y="-1" width="95" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath20)">
+<text textLength="82" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000050;&#x00006F;&#x000073;&#x000074;&#x000020;&#x000053;&#x000074;&#x000065;&#x000072;&#x00006F;&#x000069;&#x000064;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 836, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath21">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath21)">
+<circle cx="11" cy="7" r="4" style="fill: #D17800; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 767, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath22">
+<rect x="-1" y="-1" width="62" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath22)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000053;&#x000074;&#x000065;&#x000072;&#x00006F;&#x000069;&#x000064;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 744, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath23">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath23)">
+<circle cx="11" cy="7" r="4" style="fill: #B26084; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 675, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath24">
+<rect x="-1" y="-1" width="62" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath24)">
+<text textLength="49" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000046;&#x000041;&#x00002F;&#x000044;&#x000048;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 652, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath25">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath25)">
+<circle cx="11" cy="7" r="4" style="fill: #2597FA; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 564, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath26">
+<rect x="-1" y="-1" width="81" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath26)">
+<text textLength="68" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000045;&#x000078;&#x000070;&#x000061;&#x00006E;&#x000073;&#x000069;&#x00006F;&#x00006E;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 541, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath27">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath27)">
+<circle cx="11" cy="7" r="4" style="fill: #7F8E1F; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 447, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath28">
+<rect x="-1" y="-1" width="87" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath28)">
+<text textLength="74" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000049;&#x00006E;&#x000074;&#x000065;&#x000067;&#x000072;&#x000061;&#x000074;&#x000069;&#x00006F;&#x00006E;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 424, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath29">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath29)">
+<circle cx="11" cy="7" r="4" style="fill: #9D3CDB; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 363, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath30">
+<rect x="-1" y="-1" width="54" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath30)">
+<text textLength="41" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000057;&#x000057;&#x000020;&#x000049;&#x000049;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 340, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath31">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath31)">
+<circle cx="11" cy="7" r="4" style="fill: #543005; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 264, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath32">
+<rect x="-1" y="-1" width="69" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath32)">
+<text textLength="56" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x00004C;&#x000069;&#x000076;&#x000065;&#x000020;&#x000042;&#x000061;&#x00006C;&#x00006C;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 241, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath33">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath33)">
+<circle cx="11" cy="7" r="4" style="fill: #01665E; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 158, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath34">
+<rect x="-1" y="-1" width="76" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath34)">
+<text textLength="63" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000044;&#x000065;&#x000061;&#x000064;&#x000020;&#x000042;&#x000061;&#x00006C;&#x00006C;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 135, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath35">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath35)">
+<circle cx="11" cy="7" r="4" style="fill: #A23A2E; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 28, 40)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath36">
+<rect x="-1" y="-1" width="100" height="19" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath36)">
+<text textLength="87" lengthAdjust="spacingAndGlyphs" x="6" y="14" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 14px; white-space: pre; ">&#x000031;&#x000039;&#x000074;&#x000068;&#x000020;&#x000043;&#x000065;&#x00006E;&#x000074;&#x000075;&#x000072;&#x000079;</text>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 5, 41)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath37">
+<rect x="-1" y="-1" width="24" height="16" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath37)">
+<circle cx="11" cy="7" r="4" style="fill: #445694; "></circle>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 5, 20)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath38">
+<rect x="-1" y="-1" width="1055" height="21" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath38)">
+<text textLength="25" lengthAdjust="spacingAndGlyphs" x="514" y="16" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font3', 'Anova UI', sans-serif; font-size: 16px; white-space: pre; ">&#x000045;&#x000072;&#x000061;</text>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="SVG_IDX_ClipPath39">
+<rect x="-1" y="-1" width="1161" height="25" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath39)">
+<g transform="matrix(1, 0, 0, 1, 437, 0)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath40">
+<rect x="-1" y="-1" width="346" height="25" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath40)">
+<text textLength="332.43749" lengthAdjust="spacingAndGlyphs" x="6.28125" y="18.22105" style="fill: #000000; font-family: 'SVG_IDX_Anova UI Font6', 'Anova UI', sans-serif; font-size: 19px; white-space: pre; ">&#x000041;&#x000076;&#x000065;&#x000072;&#x000061;&#x000067;&#x000065;&#x000020;&#x000052;&#x000075;&#x00006E;&#x000073;&#x000020;&#x000050;&#x000065;&#x000072;&#x000020;&#x000047;&#x000061;&#x00006D;&#x000065;&#x000020;&#x000062;&#x000079;&#x000020;&#x000053;&#x000065;&#x000061;&#x000073;&#x00006F;&#x00006E;</text>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 24)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath41">
+<rect x="-1" y="-1" width="1161" height="31" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath41)">
+<g transform="matrix(1, 0, 0, 1, 601, 0)">
+<defs>
+<clipPath id="SVG_IDX_ClipPath42">
+<rect x="-1" y="-1" width="18" height="21" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath42)">
+</g>
+</g>
+</g>
+</g>
+<g transform="matrix(1, 0, 0, 1, 0, 54)">
+</g>
+<defs>
+<clipPath id="SVG_IDX_ClipPath43">
+<rect x="65" y="90" width="1088" height="598" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath43)">
+</g>
+<defs>
+<clipPath id="SVG_IDX_ClipPath44">
+<rect x="-1" y="-1" width="1161" height="861" ></rect>
+</clipPath>
+</defs>
+<g clip-path="url(#SVG_IDX_ClipPath44)">
+</g>
+</g>
+</g>
+</g>
+<rect x="0" y="0" width="1200" height="900" fill="#FFFFFF" fill-opacity="0" aria-hidden="true">
+<desc>The SGPlot Procedure</desc>
+</rect>
+</g>
+<g id="SVG_IDX_singleTip1" visibility="hidden" pointer-events="none">
+   <rect id="SVG_IDX_singleBox1" x="0" y="0" width="88" height="20" rx="2" ry="2" fill="white" stroke="black" stroke-width="1.5" opacity="0.8"></rect>
+   <text id="SVG_IDX_singleText1" x="5" y="15" font-family="'Albany AMT', sans-serif" font-size="12"><tspan id="SVG_IDX_tiptspan1" x="7" class="tiptext"><![CDATA[ ]]></tspan></text>
+</g>
+<defs>
+<style type="text/css"><![CDATA[
+    tspan.tiptext { white-space: pre }
+]]></style>
+</defs>
+<defs>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX_Anova UI Font3";
+      src: url("#SVG_IDX_Font3") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX_Font3" horiz-adv-x="3712" >
+   <font-face      font-family="SVG_IDX_Anova UI Font3"
+    units-per-em="2048" ascent="959" descent="-251" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX_Anova UI Font3"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v5472h3264v-5472h-3264" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="892" 
+d="M190 598Q190 873 332 1122 T712 1578L796 1490Q592 1302 479 1076 T366 598Q366 
+346 479 119 T796 -296L712 -384Q473 -177 332 72 T190 598Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="1020" 
+d="M380 598L808 1538L966 1538L966 1536L534 598L106 -341L-51 -341L-51 -339L380 
+598Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1190" 
+d="M880 702Q880 840 820 894 T684 947Q612 947 531 915 T352 832L352 0L186 
+0L186 1493L352 1493L352 955Q448 1016 539 1057 T714 1098Q856 1098 951 1011 T
+1046 729L1046 0L880 0L880 702Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1530" 
+d="M1252 0L1105 384L418 384L271 0L90 0L650 1450L887 1450L1446 0L1252 
+0ZM781 1268L742 1268L473 533L1050 533L781 1268Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1190" 
+d="M1020 47Q1020 -166 921 -254 T592 -341L270 -341L270 -198L559 -198Q743 -198 799 
+-144 T856 67L856 192Q768 142 693 114 T546 85Q378 85 239 220 T100 576Q
+100 821 254 959 T565 1098Q636 1098 710 1067 T860 994L860 1066L1020 1066L1020 
+47ZM272 578Q272 410 373 318 T584 226Q643 226 708 252 T856 319L856 865Q
+774 904 709 930 T594 957Q473 957 373 856 T272 578Z" ></glyph>
+<glyph unicode="&#49;" horiz-adv-x="1232" 
+d="M1085 143L1085 0L229 0L229 143L592 143L592 1051L223 1051L223 1194L411 
+1194Q530 1194 563 1244 T596 1450L758 1450L758 143L1085 143Z" ></glyph>
+<glyph unicode="&#56;" horiz-adv-x="1232" 
+d="M596 -32Q382 -32 247 75 T112 346Q112 457 183 549 T432 758Q317 819 242 
+897 T168 1104Q168 1266 300 1374 T614 1482Q819 1482 936 1379 T1054 1128Q1054 1020 
+988 940 T766 760Q926 678 1015 598 T1104 369Q1104 203 962 85 T596 -32ZM594 
+846L647 819Q788 913 837 979 T886 1122Q886 1198 816 1268 T612 1339Q489 1339 
+413 1269 T338 1112Q338 1030 389 979 T594 846ZM280 358Q280 264 370 187 T604 
+111Q758 111 846 191 T934 363Q934 459 869 513 T622 660L550 696Q401 596 
+341 524 T280 358Z" ></glyph>
+<glyph unicode="&#54;" horiz-adv-x="1232" 
+d="M684 938Q862 938 989 814 T1116 478Q1116 253 968 110 T614 -32Q395 -32 251 
+106 T106 476Q106 713 289 950 T727 1450L944 1450L944 1448Q778 1293 640 1150 T
+414 873Q485 904 552 921 T684 938ZM282 490Q282 321 372 217 T614 113Q768 
+113 855 220 T942 472Q942 627 859 711 T630 795Q559 795 488 779 T338 732Q
+311 673 297 614 T282 490Z" ></glyph>
+<glyph unicode="&#48;" horiz-adv-x="1232" 
+d="M1114 676Q1114 473 1065 328 T932 96Q868 35 785 1 T606 -32Q512 -32 429 
+0 T280 101Q198 182 149 328 T100 676L100 774Q100 977 149 1122 T282 1354Q
+346 1415 430 1449 T608 1482Q702 1482 785 1450 T936 1349Q1018 1268 1066 1122 T1114 
+774ZM608 115Q663 115 713 135 T806 199Q866 258 902 376 T938 678L938 772Q
+938 958 902 1075 T808 1249Q766 1294 713 1315 T606 1335Q550 1335 501 1315 T407 
+1251Q350 1192 313 1074 T276 772L276 678Q276 492 312 374 T405 199Q450 156 
+501 135 T608 115Z" ></glyph>
+<glyph unicode="&#55;" horiz-adv-x="1232" 
+d="M225 0L225 2L917 1295L129 1295L129 1450L1104 1450L1104 1321L411 0L225 
+0Z" ></glyph>
+<glyph unicode="&#57;" horiz-adv-x="1232" 
+d="M532 512Q354 512 228 636 T102 972Q102 1197 250 1340 T604 1482Q823 1482 967 
+1344 T1112 974Q1112 737 929 499 T491 0L274 0L274 2Q440 157 577 300 T
+802 577Q731 546 665 529 T532 512ZM276 978Q276 823 359 739 T588 655Q657 
+655 729 671 T880 718Q905 777 920 836 T936 960Q936 1129 846 1233 T604 1337Q
+450 1337 363 1230 T276 978Z" ></glyph>
+<glyph unicode="&#50;" horiz-adv-x="1232" 
+d="M1052 155L1052 0L139 0L139 92Q139 223 199 328 T432 569L682 766Q804 
+862 853 925 T901 1077Q901 1196 821 1265 T628 1335Q512 1335 414 1271 T248 1098L
+151 1204Q219 1316 347 1399 T643 1482Q735 1482 820 1452 T966 1362Q1018 1310 1047 
+1238 T1077 1079Q1077 944 1009 858 T827 684L536 454Q411 358 363 294 T307 155Z" ></glyph>
+<glyph unicode="&#51;" horiz-adv-x="1232" 
+d="M1056 1103Q1056 1002 992 913 T804 772L804 766Q940 721 1006 622 T1073 393Q1073 
+216 932 92 T565 -32Q407 -32 297 21 T114 168L206 277Q274 195 366 155 T
+571 115Q712 115 806 193 T899 403Q899 522 812 602 T561 682L418 682L418 
+828L540 828Q704 828 792 905 T880 1088Q880 1215 794 1275 T588 1335Q471 1335 
+379 1280 T233 1142L141 1251Q204 1343 321 1413 T608 1482Q804 1482 930 1376 T1056 
+1103Z" ></glyph>
+<glyph unicode="&#52;" horiz-adv-x="1232" 
+d="M1138 384L948 384L948 0L784 0L784 384L88 384L88 543L692 1450L948 
+1450L948 523L1138 523L1138 384ZM246 523L784 523L784 1306L766 1306L246 523Z" ></glyph>
+<glyph unicode="&#53;" horiz-adv-x="1232" 
+d="M1067 457Q1067 225 912 96 T557 -32Q380 -32 267 39 T90 205L186 322Q246 
+230 338 172 T559 115Q698 115 795 202 T892 450Q892 573 813 662 T506 750L
+202 750L296 1450L1054 1450L1054 1295L434 1295L376 896L559 896Q808 896 938 
+777 T1067 457Z" ></glyph>
+<glyph unicode="&#83;" horiz-adv-x="1275" 
+d="M989 402Q989 492 926 558 T651 664L508 693Q336 730 248 818 T160 1054Q160 
+1244 309 1363 T661 1482Q842 1482 961 1413 T1155 1247L1044 1122Q980 1216 883 1275 T
+665 1333Q518 1333 425 1254 T332 1070Q332 986 387 932 T634 839L770 812Q968 
+774 1065 675 T1161 420Q1161 222 1013 95 T647 -32Q473 -32 339 38 T112 222L
+215 352Q290 252 408 185 T641 117Q806 117 898 204 T989 402Z" ></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M1014 119Q921 44 817 6 T604 -32Q397 -32 249 108 T100 516L100 550Q100 
+806 252 952 T592 1098Q788 1098 918 968 T1048 614L1048 512L268 512Q272 310 
+372 209 T618 109Q706 109 794 145 T946 236ZM592 957Q473 957 380 879 T272 
+643L886 643Q886 795 800 876 T592 957Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1105" 
+d="M104 287Q104 346 124 400 T186 496Q225 537 305 571 T526 615L802 640L802 
+681Q802 822 736 889 T532 955Q450 955 362 915 T215 816L137 928Q212 1004 
+320 1051 T552 1098Q733 1098 851 997 T968 662L968 0L804 0L804 122Q704 
+40 606 4 T420 -32Q301 -32 203 53 T104 287ZM268 302Q268 213 323 160 T
+456 107Q526 107 607 135 T802 242L802 519L567 496Q456 486 397 464 T313 
+416Q292 392 280 362 T268 302Z" ></glyph>
+<glyph unicode="&#115;" horiz-adv-x="1062" 
+d="M522 -32Q399 -32 284 18 T94 174L184 283Q241 197 336 151 T532 105Q649 
+105 718 161 T786 299Q786 363 748 395 T598 452L393 495Q274 522 200 584 T
+126 769Q126 905 238 1001 T534 1098Q653 1098 763 1045 T930 900L837 794Q794 
+867 708 913 T526 959Q426 959 357 910 T288 779Q288 732 318 698 T462 637L
+667 594Q798 565 873 502 T948 318Q948 174 833 71 T522 -32Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1232" 
+d="M618 -32Q403 -32 252 120 T100 512L100 554Q100 790 250 944 T616 1098Q833 
+1098 983 945 T1134 554L1134 512Q1134 274 985 121 T618 -32ZM616 109Q772 109 
+869 219 T966 509L966 552Q966 734 868 845 T616 955Q462 955 366 844 T270 
+552L270 512Q270 332 366 220 T616 109Z" ></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1190" 
+d="M880 702Q880 840 820 894 T684 947Q612 947 531 915 T352 832L352 0L186 
+0L186 1066L348 1066L348 953Q444 1014 537 1056 T714 1098Q856 1098 951 1011 T
+1046 729L1046 0L880 0L880 702Z" ></glyph>
+<glyph unicode="&#118;" horiz-adv-x="1190" 
+d="M575 181L604 181L926 1066L1102 1066L688 0L487 0L72 1066L254 1066L575 
+181Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="510" 
+d="M0 0L0 0Z" ></glyph>
+<glyph unicode="&#82;" horiz-adv-x="1402" 
+d="M212 0L212 1450L733 1450Q978 1450 1107 1356 T1236 1077Q1236 953 1166 859 T960 
+728L960 716Q1064 694 1110 632 T1175 438L1249 0L1067 0L1007 374Q985 526 
+930 583 T739 640L385 640L385 0L212 0ZM714 1299L385 1299L385 789L704 
+789Q888 789 971 868 T1054 1062Q1054 1180 968 1240 T714 1299Z" ></glyph>
+<glyph unicode="&#117;" horiz-adv-x="1190" 
+d="M332 362Q332 224 392 171 T530 118Q600 118 683 150 T862 234L862 1066L1028 
+1066L1028 0L864 0L864 111Q768 50 676 9 T497 -32Q358 -32 263 53 T168 
+334L168 1066L332 1066L332 362Z" ></glyph>
+<glyph unicode="&#80;" horiz-adv-x="1317" 
+d="M1228 1010Q1228 807 1093 681 T670 554L387 554L387 0L212 0L212 1450L696 
+1450Q976 1450 1102 1330 T1228 1010ZM694 1299L387 1299L387 706L680 706Q874 706 
+961 789 T1048 1010Q1048 1146 966 1223 T694 1299Z" ></glyph>
+<glyph unicode="&#114;" horiz-adv-x="807" 
+d="M672 1066L749 1066L749 898L676 898Q600 898 534 863 T352 722L352 0L186 
+0L186 1066L348 1066L348 862Q456 978 520 1022 T672 1066Z" ></glyph>
+<glyph unicode="&#71;" horiz-adv-x="1572" 
+d="M760 -32Q518 -32 319 158 T120 721Q120 1082 344 1282 T831 1482Q1001 1482 1140 
+1422 T1374 1257L1276 1126Q1194 1226 1073 1278 T833 1329Q620 1329 460 1166 T299 
+713Q299 454 441 287 T782 120Q876 120 976 151 T1196 271L1196 616L768 616L
+768 768L1366 768L1366 0L1206 0L1206 130Q1085 46 978 7 T760 -32Z" ></glyph>
+<glyph unicode="&#109;" horiz-adv-x="1785" 
+d="M829 704Q829 840 776 894 T655 947Q594 947 517 914 T352 830L352 0L186 
+0L186 1066L348 1066L348 951Q436 1012 524 1055 T694 1098Q782 1098 853 1058 T
+960 934Q1054 998 1152 1048 T1337 1098Q1460 1098 1549 1015 T1638 738L1638 0L1472 
+0L1472 704Q1472 840 1419 894 T1298 947Q1236 947 1158 912 T989 826Q991 805 
+993 783 T995 736L995 0L829 0L829 704Z" ></glyph>
+<glyph unicode="&#116;" horiz-adv-x="850" 
+d="M749 143L749 0L528 0Q374 0 309 67 T244 291L244 923L78 923L78 1066L
+244 1066L244 1356L409 1408L409 1066L768 1066L768 923L409 923L409 329Q409 
+216 445 179 T592 143Z" ></glyph>
+<glyph unicode="&#67;" horiz-adv-x="1445" 
+d="M120 711L120 756Q120 1083 330 1283 T811 1482Q962 1482 1103 1412 T1325 1226L
+1220 1112Q1138 1220 1028 1276 T808 1331Q612 1331 457 1173 T301 754L301 708Q301 
+438 447 279 T802 119Q921 119 1030 173 T1222 316L1312 205Q1222 105 1086 36 T
+774 -32Q530 -32 325 157 T120 711Z" ></glyph>
+<glyph unicode="&#68;" horiz-adv-x="1530" 
+d="M212 0L212 1450L636 1450Q1001 1450 1214 1269 T1427 735Q1427 383 1201 191 T641 
+0ZM649 1297L387 1297L387 153L638 153Q890 153 1068 297 T1245 735Q1245 1022 
+1079 1160 T649 1297Z" ></glyph>
+<glyph unicode="&#100;" horiz-adv-x="1232" 
+d="M886 0L886 93Q796 36 716 2 T555 -32Q389 -32 245 118 T100 517Q100 
+795 258 946 T588 1098Q653 1098 729 1075 T880 1016L880 1493L1046 1493L1046 
+0L886 0ZM270 519Q270 315 378 214 T592 113Q657 113 728 142 T880 216L880 
+877Q798 914 730 934 T604 955Q481 955 376 843 T270 519Z" ></glyph>
+<glyph unicode="&#66;" horiz-adv-x="1360" 
+d="M212 0L212 1450L753 1450Q976 1450 1100 1360 T1224 1097Q1224 986 1160 901 T980 
+770L980 766Q1120 720 1188 624 T1257 400Q1257 214 1123 107 T743 0ZM751 1303L
+382 1303L382 830L710 830Q872 830 958 897 T1044 1080Q1044 1189 968 1246 T751 
+1303ZM724 682L382 682L382 147L727 147Q892 147 985 210 T1077 410Q1077 528 
+984 605 T724 682Z" ></glyph>
+<glyph unicode="&#108;" horiz-adv-x="637" 
+d="M184 233L184 1493L350 1493L350 280Q350 192 376 168 T491 143L559 143L559 
+0L411 0Q296 0 240 57 T184 233Z" ></glyph>
+<glyph unicode="&#76;" horiz-adv-x="1190" 
+d="M1102 153L1102 0L212 0L212 1450L387 1450L387 153L1102 153Z" ></glyph>
+<glyph unicode="&#105;" horiz-adv-x="552" 
+d="M284 1322Q225 1322 190 1356 T155 1439Q155 1490 191 1524 T284 1558Q342 1558 
+376 1524 T411 1439Q411 1390 376 1356 T284 1322ZM366 1066L366 0L200 0L200 
+1066L366 1066Z" ></glyph>
+<glyph unicode="&#87;" horiz-adv-x="2167" 
+d="M624 189L655 189L993 1237L1182 1237L1515 189L1550 189L1882 1450L2060 1450L1648 
+0L1413 0L1093 999L1069 999L749 0L516 0L102 1450L290 1450L624 189Z" ></glyph>
+<glyph unicode="&#73;" horiz-adv-x="637" 
+d="M403 1450L403 0L229 0L229 1450L403 1450Z" ></glyph>
+<glyph unicode="&#69;" horiz-adv-x="1317" 
+d="M212 0L212 1450L1150 1450L1150 1297L387 1297L387 836L1034 836L1034 682L387 
+682L387 153L1161 153L1161 0L212 0Z" ></glyph>
+<glyph unicode="&#120;" horiz-adv-x="1147" 
+d="M458 552L96 1064L96 1066L290 1066L567 660L594 660L870 1066L1056 1066L1056 
+1064L692 557L1087 2L1087 0L888 0L584 445L557 445L252 0L61 0L61 
+2L458 552Z" ></glyph>
+<glyph unicode="&#112;" horiz-adv-x="1232" 
+d="M645 -32Q579 -32 503 -8 T352 50L352 -341L186 -341L186 1066L346 1066L346 
+974Q436 1029 516 1064 T678 1098Q844 1098 988 946 T1132 547Q1132 269 974 118 T
+645 -32ZM641 953Q575 953 504 924 T352 850L352 189Q434 150 502 130 T628 
+109Q751 109 857 220 T962 545Q962 749 855 851 T641 953Z" ></glyph>
+<glyph unicode="&#70;" horiz-adv-x="1232" 
+d="M212 0L212 1450L1130 1450L1130 1297L387 1297L387 750L1009 750L1009 597L387 
+597L387 0L212 0Z" ></glyph>
+<glyph unicode="&#72;" horiz-adv-x="1572" 
+d="M1190 0L1190 682L387 682L387 0L212 0L212 1450L387 1450L387 836L1190 
+836L1190 1450L1364 1450L1364 0L1190 0Z" ></glyph>
+<glyph unicode="&#121;" horiz-adv-x="1147" 
+d="M604 -160Q565 -258 502 -299 T330 -341L164 -341L164 -200L303 -200Q374 -200 414 
+-173 T481 -70L540 100L477 100L76 1066L258 1066L575 256L612 256L907 1066L
+1081 1066L604 -160Z" ></glyph>
+<glyph unicode="&#99;" horiz-adv-x="1105" 
+d="M610 109Q698 109 775 146 T903 236L980 134Q911 56 809 12 T594 -32Q403 
+-32 252 115 T100 505L100 548Q100 796 256 947 T608 1098Q729 1098 827 1052 T
+993 924L903 812Q846 880 777 916 T612 953Q475 953 373 845 T270 548L270 
+505Q270 332 371 220 T610 109Z" ></glyph>
+</font>
+<style type="text/css"><![CDATA[
+  @font-face {
+      font-family: "SVG_IDX_Anova UI Font6";
+      src: url("#SVG_IDX_Font6") format("svg")
+      }
+]]></style>
+<font id="SVG_IDX_Font6" horiz-adv-x="3712" >
+   <font-face      font-family="SVG_IDX_Anova UI Font6"
+    units-per-em="2048" ascent="959" descent="-251" >
+      <font-face-src>
+         <font-face-name name="SVG_IDX_Anova UI Font6"></font-face-name>
+      </font-face-src>
+   </font-face>
+<missing-glyph><path d="M0 0v5472h3264v-5472h-3264" fill="none"></path>
+</missing-glyph>
+<glyph unicode="&#40;" horiz-adv-x="892" 
+d="M190 634Q190 918 336 1175 T751 1664L884 1525Q657 1316 548 1097 T438 634Q438 
+390 548 170 T884 -258L751 -397Q481 -164 336 91 T190 634Z" ></glyph>
+<glyph unicode="&#47;" horiz-adv-x="1020" 
+d="M384 649L821 1610L1038 1610L1038 1564L603 620L166 -341L-51 -341L-51 -295L384 
+649Z" ></glyph>
+<glyph unicode="&#104;" horiz-adv-x="1190" 
+d="M880 738Q880 860 831 904 T720 947Q655 947 578 917 T424 846L424 0L186 
+0L186 1565L424 1565L424 1056Q467 1084 563 1127 T750 1170Q906 1170 1012 1074 T
+1118 765L1118 0L880 0L880 738Z" ></glyph>
+<glyph unicode="&#65;" horiz-adv-x="1530" 
+d="M1263 0L1116 384L478 384L332 0L73 0L662 1522L948 1522L1534 0L1263 
+0ZM792 1268L804 1268L560 605L1035 605L792 1268Z" ></glyph>
+<glyph unicode="&#103;" horiz-adv-x="1190" 
+d="M1092 83Q1092 -146 982 -244 T628 -341L270 -341L270 -126L595 -126Q764 -126 810 
+-82 T856 103L856 166Q819 146 740 115 T582 85Q400 85 250 231 T100 612Q
+100 873 265 1021 T601 1170Q680 1170 758 1137 T860 1090L860 1138L1092 1138L1092 
+83ZM344 614Q344 462 433 380 T620 298Q672 298 734 322 T856 377L856 878Q
+795 907 734 932 T630 957Q524 957 434 867 T344 614Z" ></glyph>
+<glyph unicode="&#118;" horiz-adv-x="1190" 
+d="M636 253L614 253L936 1138L1190 1138L748 0L498 0L55 1138L315 1138L636 
+253Z" ></glyph>
+<glyph unicode="&#101;" horiz-adv-x="1147" 
+d="M1096 146Q975 48 865 8 T640 -32Q419 -32 260 118 T100 552L100 586Q100 
+857 262 1013 T628 1170Q839 1170 979 1030 T1120 650L1120 512L340 512Q344 362 
+433 271 T654 181Q735 181 817 214 T991 328ZM628 957Q522 957 440 888 T348 
+715L886 715Q886 816 811 886 T628 957Z" ></glyph>
+<glyph unicode="&#114;" horiz-adv-x="807" 
+d="M708 1138L821 1138L821 898L712 898Q645 898 585 866 T424 742L424 0L186 
+0L186 1138L420 1138L420 989Q468 1042 538 1090 T708 1138Z" ></glyph>
+<glyph unicode="&#97;" horiz-adv-x="1105" 
+d="M104 323Q104 389 127 450 T196 558Q240 603 326 639 T560 687L802 708L802 
+717Q802 844 747 899 T568 955Q494 955 413 918 T246 796L126 968Q228 1070 
+342 1120 T588 1170Q782 1170 911 1060 T1040 698L1040 0L804 0L804 82Q758 
+44 654 6 T456 -32Q324 -32 214 63 T104 323ZM340 338Q340 264 384 221 T
+492 179Q556 179 632 205 T802 297L802 516L606 496Q500 486 447 467 T376 
+428Q360 409 350 385 T340 338Z" ></glyph>
+<glyph unicode="&#32;" horiz-adv-x="510" 
+d="M0 0L0 0Z" ></glyph>
+<glyph unicode="&#82;" horiz-adv-x="1402" 
+d="M212 0L212 1522L769 1522Q1026 1522 1167 1419 T1308 1113Q1308 977 1231 874 T
+1012 752L1011 764Q1121 763 1173 692 T1246 480L1328 0L1072 0L1008 404Q987 
+545 941 592 T775 640L457 640L457 0L212 0ZM750 1299L457 1299L457 861L
+740 861Q910 861 982 930 T1054 1098Q1054 1198 980 1248 T750 1299Z" ></glyph>
+<glyph unicode="&#117;" horiz-adv-x="1190" 
+d="M404 398Q404 276 453 233 T566 190Q629 190 708 221 T862 292L862 1138L1100 
+1138L1100 0L864 0L864 81Q821 54 724 11 T533 -32Q380 -32 274 63 T168 
+370L168 1138L404 1138L404 398Z" ></glyph>
+<glyph unicode="&#110;" horiz-adv-x="1190" 
+d="M880 738Q880 860 831 904 T720 947Q655 947 578 917 T424 846L424 0L186 
+0L186 1138L420 1138L420 1054Q463 1082 561 1126 T750 1170Q906 1170 1012 1074 T
+1118 765L1118 0L880 0L880 738Z" ></glyph>
+<glyph unicode="&#115;" horiz-adv-x="1062" 
+d="M558 -32Q428 -32 305 22 T84 212L223 379Q302 261 389 219 T568 177Q672 
+177 729 223 T786 335Q786 382 758 406 T626 452L421 496Q294 524 210 595 T
+126 805Q126 958 249 1064 T570 1170Q697 1170 815 1113 T1010 932L867 768Q804 
+876 727 918 T562 959Q473 959 417 919 T360 815Q360 781 382 757 T506 708L
+710 665Q851 634 935 563 T1020 354Q1020 194 894 81 T558 -32Z" ></glyph>
+<glyph unicode="&#80;" horiz-adv-x="1317" 
+d="M1300 1046Q1300 828 1154 691 T706 554L459 554L459 0L212 0L212 1522L732 
+1522Q1027 1522 1164 1392 T1300 1046ZM730 1299L459 1299L459 778L716 778Q896 778 
+972 851 T1048 1046Q1048 1166 977 1233 T730 1299Z" ></glyph>
+<glyph unicode="&#71;" horiz-adv-x="1572" 
+d="M796 -32Q539 -32 329 168 T120 757Q120 1134 355 1344 T867 1554Q1044 1554 1191 
+1491 T1456 1295L1313 1104Q1208 1232 1094 1281 T869 1329Q672 1329 521 1176 T371 
+749Q371 504 504 348 T818 192Q907 192 1000 222 T1196 325L1196 616L768 616L
+768 840L1438 840L1438 0L1206 0L1206 97Q1138 50 1025 9 T796 -32Z" ></glyph>
+<glyph unicode="&#109;" horiz-adv-x="1785" 
+d="M829 740Q829 862 786 904 T691 947Q637 947 564 916 T424 846L424 0L186 
+0L186 1138L420 1138L420 1056Q454 1080 547 1125 T730 1170Q828 1170 907 1125 T
+1012 1024Q1072 1065 1174 1118 T1373 1170Q1510 1170 1610 1077 T1710 774L1710 0L
+1472 0L1472 740Q1472 862 1430 904 T1334 947Q1280 947 1205 914 T1059 844Q1063 
+844 1065 821 T1067 772L1067 0L829 0L829 740Z" ></glyph>
+<glyph unicode="&#98;" horiz-adv-x="1232" 
+d="M1204 578Q1204 292 1038 130 T689 -32Q608 -32 526 1 T418 49L418 0L186 
+0L186 1565L424 1565L424 1084Q460 1106 541 1138 T710 1170Q897 1170 1051 1007 T
+1204 578ZM672 953Q616 953 550 928 T424 873L424 257Q488 226 551 203 T662 
+181Q770 181 866 283 T962 576Q962 770 866 861 T672 953Z" ></glyph>
+<glyph unicode="&#121;" horiz-adv-x="1147" 
+d="M673 -137Q630 -246 558 -293 T366 -341L164 -341L164 -128L339 -128Q400 -128 430 
+-108 T483 -22L526 100L489 100L58 1138L318 1138L636 328L623 328L918 1138L
+1170 1138L673 -137Z" ></glyph>
+<glyph unicode="&#83;" horiz-adv-x="1275" 
+d="M989 438Q989 514 935 570 T680 665L536 694Q354 733 257 830 T160 1090Q160 
+1298 321 1426 T697 1554Q888 1554 1014 1480 T1238 1282L1076 1099Q991 1226 902 1279 T
+701 1333Q567 1333 485 1264 T404 1106Q404 1038 450 992 T678 910L812 884Q1022 
+843 1128 735 T1233 456Q1233 241 1074 104 T683 -32Q500 -32 359 42 T102 257L
+252 448Q350 316 461 252 T677 189Q828 189 908 266 T989 438Z" ></glyph>
+<glyph unicode="&#111;" horiz-adv-x="1232" 
+d="M654 -32Q424 -32 262 131 T100 548L100 590Q100 840 260 1005 T652 1170Q884 
+1170 1045 1006 T1206 590L1206 548Q1206 296 1047 132 T654 -32ZM652 181Q792 181 
+879 280 T966 545L966 588Q966 756 878 856 T652 955Q515 955 428 855 T342 
+588L342 548Q342 381 428 281 T652 181Z" ></glyph>
+</font>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+</body>
+</html>
