@@ -19,8 +19,9 @@ If we know where to look, those changes can be detected visually in the data.
 Baseball fans often describe these shifts in terms of Eras. From the rough-and-tumble 19th Century to the modern age of analytics, the game has continually evolved. Rules changed. Strategies shifted. Players adapted. Each era tells a story—not just about baseball, but about the culture and conditions that shaped it.  
 
 In this blog, we’ll walk through the major Eras of baseball with a specific purpose: to see how change reveals itself in the data. By examining runs scored per game across seasons, we can observe when the game fundamentally shifted—and begin to ask why. Whether you're a lifelong fan, a student of the game, or just baseball-curious, this approach offers a clear example of how data helps us understand change over time.  
- 
 
+<br>
+ 
 ### Building a Visualization for the Eras of Baseball
 
 **Objective**
@@ -29,6 +30,7 @@ The objective is to create a visualization that clearly illustrates the Eras of 
 
 We will visualize "change" by looking at the average Runs Per Game (RPG) scored each season.
 
+<br>
 
 **Metrics and Formulas**
 
@@ -36,6 +38,7 @@ Runs Per Game (RPG)  = R / G
 
 Runs per game is intentionally simple. It does not attempt to explain why offense changes, but it is well-suited to indicate when it does. When meaningful change occurs in the game, we expect to see it reflected in this metric.  
 
+<br>
 
 **Required Variables**
 
@@ -44,7 +47,9 @@ From the Teams table in Lahman’s Baseball Database, we require:
 - R (runs scored)
 - G (games played)    
 
-No player-level data is needed. This is a league-level question.
+No player-level data is needed. This is a league-level question.  
+
+<br>
 
 **Workflow**  
 
@@ -66,6 +71,7 @@ The workflow for this analysis is as follows:
 
 Each step serves a purpose: extracting raw data, transforming it into a meaningful metric, aggregating it correctly, and finally presenting it in a way that allows change to be seen.
 
+<br>
 
 **Data and Tools**
 
@@ -73,9 +79,9 @@ Each step serves a purpose: extracting raw data, transforming it into a meaningf
 
 - SQLite for querying and extracting data
 
-- SAS Workbench for data preparation, aggregation, and visualization
+- SAS Workbench for data preparation, aggregation, and visualization  
 
-See the Resources section for access to SAS Workbench.
+<br>
 
 ### Code / Implementation
 
@@ -90,6 +96,7 @@ from Teams;
 
 *This query returns one row per team per season. At this stage, no aggregation is performed.*  
 
+<br>
 
 **SAS Code**  
 
@@ -206,8 +213,8 @@ Why do runs spike here?
 Why do they collapse there?  
 
 Baseball historians have long grouped these patterns into what we call eras.
-For readers who want a deeper historical walkthrough of each era—rules, equipment, players, and cultural forces—I’ve created a companion reference document: [Download the full analysis (PDF)](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/ErasBaseball.pdf)
-*(A historical guide aligned with the visualization above)*
+For readers who want a deeper historical walkthrough of each era—rules, equipment, players, and cultural forces—I’ve created a companion reference document that serves as a historical guide aligned with the visualization above: [Download the full analysis (PDF)](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/ErasBaseball.pdf)
+
 
 <br>
 

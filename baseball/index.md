@@ -34,8 +34,8 @@ Let’s play ball!*
 
 - [Blog 1: Calculating Baseball’s Slash Stats](Blog1_SlashStats/)
 - [Blog 2: The Home Run King](Blog2_715/)
-- [Blog 2: Coming Soon! The Eras of Baseball](Blog2_BaseballCardStats/)
-<!-- [Blog 3: Bill James and the Pythagorean Theorem](Blog3_Pythagorean/) -->
+- [Blog 3: The Eras of Baseball](Blog3_Eras/)
+- [Blog 4: Coming Soon! Bill James and the Pythagorean Theorem]
 
 <br>
 
