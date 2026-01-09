@@ -80,6 +80,9 @@ See the Resources section for access to SAS Workbench.
 ### Code / Implementation
 
 **SQL Query**  
+
+I'm using SQKLite to query the database.  
+
 ``` SQL
 select yearID, R, G
 from Teams;
@@ -88,6 +91,9 @@ from Teams;
 *This query returns one row per team per season. At this stage, no aggregation is performed.*
 
 **SAS Code**  
+
+We will use **SAS Workbench** to complete this task. You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.  
+
 
 ***Import the CSV File***
 ``` SAS
@@ -100,7 +106,8 @@ proc import datafile=mycsv
 run;
 ```
 
-*A temporary dataset called temp is created.*
+*A temporary dataset called temp is created.*  
+
 
 ***Calculate Runs Per Game (RPG)***
 
@@ -110,9 +117,10 @@ data rpg;
    RPG = R / G;
 run;
 ```
-*Runs Per Game (RPG) is calculated at the team-season level.*
+*Runs Per Game (RPG) is calculated at the team-season level.*  
 
-***Aggregate RPG for each season***
+
+***Aggregate RPG for each season***  
 
 ``` SAS
 proc means data=work.rpg nway;
@@ -122,7 +130,8 @@ proc means data=work.rpg nway;
 run;
 ```
 
-*This aggregation step is critical. We are no longer analyzing teams; we are analyzing eras.*
+*This aggregation step is critical. We are no longer analyzing teams; we are analyzing eras.*  
+
 
 ***Defining the Eras in Code***
 
@@ -149,7 +158,8 @@ data avgRPG (keep=yearID era avgRPG);
 run;
 ```
 
-*We are making our assumptions explicit. The visualization will now reflect both the data and our understanding of baseball history.*
+*We are making our assumptions explicit. The visualization will now reflect both the data and our understanding of baseball history.*  
+
 
 **Creating the Visualization**
 
@@ -219,14 +229,16 @@ It tells us where to look.
 
 In analytics, evidence of impact is often revealed not through complexity, but through clarity.  
 
-One of the most important skills a data scientist can develop is the ability to detect change.  
+One of the most important skills a data scientist can develop is the ability to visualize data and detect change.  
 
-Changing materials on a manufacturing line? Plot the data.
-Adjusting interest rates? Plot the data.
-Increasing advertising frequency? Plot the data.  
+Changing materials on a manufacturing line? **Plot the data.**
+Adjusting interest rates? **Plot the data.**
+Increasing advertising frequency? **Plot the data.**
+When a question arose about the Eras of Baseball, what did we do? We plotted the data.    
 
-Visualization is rarely the end of analysis.
-More often, it is the beginning of understanding.  
+*Visualization is rarely the end of analysis.*
+*More often, it is the beginning of understanding.*  
+
 
 ### Next Up
 
