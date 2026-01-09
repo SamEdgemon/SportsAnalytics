@@ -170,7 +170,9 @@ proc sgplot data=avgRPG;
    xaxis label="Season" values=(1860 to 2030 by 10);
    yaxis label="Avg Runs Per Game";
 run;
-```
+```  
+
+### Average Runs Per Game (RPG) by Season  
 
 ![AvgRPG](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Images/rpg.png)
 
