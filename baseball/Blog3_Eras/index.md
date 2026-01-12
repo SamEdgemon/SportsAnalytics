@@ -14,11 +14,13 @@ It changes when the ball itself is manufactured differently, or when materials e
 It changes with league expansion, labor dynamics, performance-enhancing drugs, and, more recently, analytics.  
 
 When meaningful change occurs, it leaves a trace.
-If we know where to look, those changes can be detected visually in the data.  
+If we know where to look, those **changes can be detected visually in the data.**  
 
 Baseball fans often describe these shifts in terms of Eras. From the rough-and-tumble 19th Century to the modern age of analytics, the game has continually evolved. Rules changed. Strategies shifted. Players adapted. Each era tells a story—not just about baseball, but about the culture and conditions that shaped it.  
 
-In this blog, we’ll walk through the major Eras of baseball with a specific purpose: to see how change reveals itself in the data. By examining runs scored per game across seasons, we can observe when the game fundamentally shifted—and begin to ask why. Whether you're a lifelong fan, a student of the game, or just baseball-curious, this approach offers a clear example of how data helps us understand change over time.  
+In this blog, we’ll walk through the major Eras of Baseball with a specific purpose: to see how change reveals itself in the data. By examining runs scored per game across seasons, we can observe when the game fundamentally shifted — and begin to ask why.  
+
+Whether you're a lifelong fan, a student of the game, or just baseball-curious, this approach offers a clear example of how data helps us understand change over time.  
 
 <br>
  
@@ -34,9 +36,11 @@ We will visualize "change" by looking at the average Runs Per Game (RPG) scored 
 
 **Metrics and Formulas**
 
-Runs Per Game (RPG)  = R / G
+**Runs Per Game (RPG) = R / G**    
 
-Runs per game is intentionally simple. It does not attempt to explain why offense changes, but it is well-suited to indicate when it does. When meaningful change occurs in the game, we expect to see it reflected in this metric.  
+RPG is intentionally simple. It does not attempt to explain why offense changes, but it is well-suited to indicate when it does. Meaningful changes in the game — rules, equipment, or strategy — often leave a clear signal in this metric.
+
+To provide a league-wide view, RPG will be **aggregated by season**, capturing the average scoring environment for each year.
 
 <br>
 
@@ -57,19 +61,19 @@ The workflow for this analysis is as follows:
 
 - Extract historical team data from Lahman’s Baseball Database (SQL)
 
-- Export the result as a CSV file
+- Export the result as a CSV file to SAS Workbench
 
-- Import the CSV file into SAS Workbench (PROC IMPORT)
+- Import the CSV file into SAS (PROC IMPORT)
 
-- Calculate Runs Per Game at the team level (SAS Data Step)
+- Calculate RPG at the team level (SAS Data Step)
 
-- Aggregate by season (PROC MEANS)
+- Aggregate RPG by season (PROC MEANS)
 
 - Assign each season to a historically meaningful era (SAS Data Step)
 
-- Visualize the result using PROC SGPLOT
+- Visualize the result (PROC SGPLOT)
 
-Each step serves a purpose: extracting raw data, transforming it into a meaningful metric, aggregating it correctly, and finally presenting it in a way that allows change to be seen.
+Each step serves a purpose: extracting raw data, transforming it into a meaningful metric, aggregating it correctly, and finally presenting it in a way that makes changes in the game visible.
 
 <br>
 
@@ -95,8 +99,9 @@ from Teams;
 ```
 
 *This query returns one row per team per season. At this stage, no aggregation is performed.*  
+*The results of the query are extracted as a CSV file called rpg00.csv.* 
 
-you can download the CSV file here.
+You can download **rpg00.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Data/rpg00.csv).  
 
 <br>
 
@@ -127,7 +132,7 @@ run;
 ``` SAS
 data rpg;
    set temp;
-   RPG = R / G;
+   rpg = R / G;
 run;
 ```
 *Runs Per Game (RPG) is calculated at the team-season level.*  
@@ -195,11 +200,12 @@ proc sgplot data=avgRPG;
               "Expansion" "FA/DH" "Steroid" "Post Steroid" "Analytics");
 
    xaxis label="Season" values=(1860 to 2030 by 10);
-   yaxis label="Avg Runs Per Game";
+   yaxis label="Avg Runs Per Game (RPG)";
 run;
 ```  
 
 ### Average Runs Per Game (RPG) by Season  
+The following scatter plot shows average Runs Per Game (RPG) for each season, with eras indicated by color and vertical dashed lines.
 
 ![AvgRPG](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Images/rpg.png)
 
