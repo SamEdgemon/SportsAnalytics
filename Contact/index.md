@@ -10,7 +10,7 @@
 I welcome thoughtful conversations related to sports analytics, data visualization, and the broader themes explored in this series. If you are a student, practitioner, or organization interested in analytics, teaching, or collaboration, feel free to reach out.  
 
 
-**Email** 
+**Email**   
 [sam.edgemon@sas.com](mailto:sam.edgemon@sas.com)
 
 
