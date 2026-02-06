@@ -7,7 +7,7 @@
 
 v2
 
-# Bill James and the Two Numbers 
+# Bill James and the Two Numbers
 # that Explain Winning  
 
 ### History and Origins  
@@ -28,12 +28,10 @@ James discovered that a team’s winning percentage could be estimated using onl
 
 <!--WP≈R^2/(R^2+RA^2 )-->
 
-$$
-WP \approx \frac{R^2}{R^2 + RA^2}
-$$
+$WP \approx \frac{R^2}{R^2 + RA^2}$
 
 
-This deceptively simple formula proved remarkably accurate. Its implication was profound: nearly everything in baseball boils down to how many runs a team scores and how many it allows.  
+This deceptively simple formula proved remarkably accurate. Its implication was profound: nearly everything in *baseball boils down to how many runs a team scores and how many it allows.*  
 
 In this framework, outs are the scarce resource, and runs are the currency. Traditional offensive metrics — batting average or RBIs — may feel important, but they are subordinate to the ultimate goal of producing runs efficiently. Teams that understand the relationship between runs and wins can prioritize the metrics that truly matter.  
 
@@ -41,21 +39,24 @@ James’ Pythagorean insight reframed the game: improving winning percentage is 
 
 But before we discuss metrics, let’s evaluate the Pythagorean Theorem for Baseball.
 
-Objective
-Calculate and then validate Bill Jame's Pythagorean Theorem for Baseball  
+Objective  
 
-What we know
+Validate Bill Jame's Pythagorean Theorem for Baseball  
 
-WP = W / (W + L)
-estWP = R^2 / (R^2 + RA^2)  
+What we know  
+
+- WP = W / (W + L)
+- estWP = R^2 / (R^2 + RA^2)  
 
 Requirements / strategies  
+
 W, G, R, RA
 
-Data and tools
-Lahman's Baseball Database
-SQL
-SAS 
+Data and tools  
+
+- Lahman's Baseball Database
+- SQL
+- SAS 
 
 
 SQL
