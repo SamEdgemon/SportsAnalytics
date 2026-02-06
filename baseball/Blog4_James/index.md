@@ -5,10 +5,9 @@
 
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css"> 
 
-v4cd //
+v5
 
-# Bill James and the Two Numbers
-# that Explain Winning  
+# Bill James and the <br> Two Numbers that Explain Winning  
 
 ### History and Origins  
 
@@ -28,7 +27,13 @@ James discovered that a team’s winning percentage could be estimated using onl
 
 <!--WP≈R^2/(R^2+RA^2 )-->
 
-$WP \approx \frac{R^2}{R^2 + RA^2}$
+$WP \approx \frac{R^2}{R^2 + RA^2}$  
+
+
+$$
+WP \approx \frac{R^2}{R^2 + RA^2}
+$$
+
 
 
 This deceptively simple formula proved remarkably accurate. Its implication was profound: nearly everything in *baseball boils down to how many runs a team scores and how many it allows.*  
