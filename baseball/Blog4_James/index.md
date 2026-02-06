@@ -25,26 +25,20 @@ Reducing the complexity of a baseball season — 162 games, thousands of at-bats
 
 James discovered that a team’s winning percentage could be estimated using only Runs Scored (R) and Runs Allowed (RA):  
 
-<!--WP≈R^2/(R^2+RA^2 )-->
-
-$WP \approx \frac{R^2}{R^2 + RA^2}$  
-
-
 $$
 WP \approx \frac{R^2}{R^2 + RA^2}
 $$
 
 
+This deceptively simple formula proved remarkably accurate, and its implication profound: nearly everything in *baseball boils down to how many runs a team scores and how many it allows.*  
 
-This deceptively simple formula proved remarkably accurate. Its implication was profound: nearly everything in *baseball boils down to how many runs a team scores and how many it allows.*  
+In this framework, outs are the scarce resource, and runs are the currency. Traditional offensive metrics — batting average or RBIs — may feel important, but they are subordinate to the ultimate goal of producing runs efficiently. **Teams that understand the relationship between runs and wins can prioritize the metrics that truly matter.**  
 
-In this framework, outs are the scarce resource, and runs are the currency. Traditional offensive metrics — batting average or RBIs — may feel important, but they are subordinate to the ultimate goal of producing runs efficiently. Teams that understand the relationship between runs and wins can prioritize the metrics that truly matter.  
-
-James’ Pythagorean insight reframed the game: improving winning percentage is directly tied to increasing runs scored or decreasing runs allowed. This perspective naturally sets up the next question: which offensive metrics most effectively produce runs?  
+James’ Pythagorean Expectation reframed the game with the realization that **improving winning percentage is directly tied to increasing runs scored or decreasing runs allowed**. This perspective naturally sets up the next question: which offensive metrics most effectively produce runs?  
 
 But before we discuss metrics, let’s evaluate the Pythagorean Theorem for Baseball.
 
-Objective  
+**Objective**  
 
 Validate Bill Jame's Pythagorean Theorem for Baseball  
 
