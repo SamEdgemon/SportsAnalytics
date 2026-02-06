@@ -1,11 +1,11 @@
 ---
 ---
-{% include nav.html %}
+<!--{% include nav.html %}
 
 
-<link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css">
+<link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css">  -->
 
-v2
+v3
 
 # Bill James and the Two Numbers
 # that Explain Winning  
