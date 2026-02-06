@@ -49,6 +49,9 @@ What we know
 
 - $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$
 
+- Estimated winning percentage: $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$
+
+
 
 Requirements / strategies  
 
