@@ -42,20 +42,14 @@ But before we discuss metrics, let’s evaluate the Pythagorean Theorem for Base
 
 Validate Bill Jame's Pythagorean Theorem for Baseball  
 
-What we know  
-
-- WP = W / (W + L) 
-- $estWP = R^{2}$   
-
-- $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$
+**What we know**  
 
 - Winning Percentage: $WP = \frac{W}{W+L}$
 
-- Estimated Winning Percentage: $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$
+- Estimated Winning Percentage: $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$  
 
 
-
-Requirements / strategies  
+**Requirements / Strategies**   
 
 W, G, R, RA
 
