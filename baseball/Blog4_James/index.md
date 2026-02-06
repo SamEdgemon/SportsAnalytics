@@ -5,9 +5,10 @@
 
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css">
 
-v1.
+v2
 
-# Bill James and the Two Numbers that Explain Winning  
+# Bill James and the Two Numbers 
+# that Explain Winning  
 
 ### History and Origins  
 
@@ -19,12 +20,18 @@ Through a series of self-published books he called *Baseball Abstracts*, which h
 
 What ultimately separated James from his predecessors was not technical sophistication, but the question he insisted on asking. Rather than refining descriptive measures of performance, he asked a more fundamental question: What actually causes teams to win baseball games? That question — and the discipline to follow it wherever the data led — reframed how offense, defense, and value would be understood going forward. This focus on identifying the core drivers of winning naturally led him to ask whether team performance could be distilled to just two numbers: *runs scored and runs allowed.*  
 
-# The Pythagorean Theorem for Baseball  
+### The Pythagorean Theorem for Baseball  
 
-Reducing the complexity of a baseball season — 162 games, thousands of at-bats, dozens of players — into just two numbers was Bill James’ revolutionary insight. Winning is not about style, tradition, or reputation; it is arithmetic. Building on his focus on what truly drives wins, James formalized this insight mathematically with what he called the Pythagorean Theorem for Baseball.
+Reducing the complexity of a baseball season — 162 games, thousands of at-bats, dozens of players — into just two numbers was Bill James’ revolutionary insight. Winning is not about style, tradition, or reputation; it is arithmetic. Building on his focus on what truly drives wins, James formalized this insight mathematically with what he called the Pythagorean Theorem for Baseball (sometimes referred to as the Pythagorean Expectation).  
+
 James discovered that a team’s winning percentage could be estimated using only Runs Scored (R) and Runs Allowed (RA):  
 
-WP≈R^2/(R^2+RA^2 )  
+<!--WP≈R^2/(R^2+RA^2 )-->
+
+$$
+WP \approx \frac{R^2}{R^2 + RA^2}
+$$
+
 
 This deceptively simple formula proved remarkably accurate. Its implication was profound: nearly everything in baseball boils down to how many runs a team scores and how many it allows.  
 
