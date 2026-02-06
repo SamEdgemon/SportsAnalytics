@@ -45,7 +45,10 @@ Validate Bill Jame's Pythagorean Theorem for Baseball
 What we know  
 
 - WP = W / (W + L) 
-- estWP = R^2^ / (R^2^ + RA^2^)  
+- $estWP = R^{2}$   
+
+- $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$
+
 
 Requirements / strategies  
 
