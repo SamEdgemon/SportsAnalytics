@@ -54,7 +54,7 @@ Validate Bill James' Pythagorean Theorem for Baseball
 
 - Estimated Winning Percentage: $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$  
 
-
+<br>
 
 
 **Required Variables**   
@@ -67,7 +67,7 @@ From the Teams table in Lahman’s Baseball Database, we need:
 - W (wins)
 - L (losses)  
 
-
+<br>
 
 **Workflow**  
 1. Extract data from database using SQL
@@ -75,8 +75,8 @@ From the Teams table in Lahman’s Baseball Database, we need:
 3. Import CSV file into SAS
 4. Calculate the Pythagorean Expectation in SAS
 5. Create visuals in SAS.  
-
-
+  
+<br>
 
 **Data and Tools**    
 
@@ -84,14 +84,16 @@ From the Teams table in Lahman’s Baseball Database, we need:
 - **SQL** fro extracting data subset
 - **SAS Workbench** for importing, processing, and computing metrics  
 
-
+<br>
 
 ### Hitting the Database
 
 We will refer to the formulas and workflow as we begin writing code.  
 
 With the SQLite interface open the data will be extracted from the **Teams** table.
-Criteria for this extraction will include data from 1954 forward. 
+Criteria for this extraction will include data from 1954 forward.  
+
+<br>
 
 **SQL Code**
 
@@ -107,6 +109,8 @@ where yearID>1954;
 
 You can download **PythagExtract1.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Data/PythagExtract1.csv).  
 
+<br>
+
 
 **SAS Code**  
 
@@ -120,7 +124,9 @@ run;
 proc contents; run;
 ```
 *Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*
-*Run PROC CONTENTS to see informatoin about the temp file*
+*Run PROC CONTENTS to see informatoin about the temp file*  
+
+<br>
 
 **Calculate Winning Percentage (WP) and the Pythagorean Expectation (estWP)**  
 
@@ -137,12 +143,14 @@ run;
 *and the Pythagorean Expectation (estWP) from runs scored and allowed.*
 
 
-Caculate r
+**Caculate teh Pearson Correlation Coefficient (r)**
 
+``` SAS
 proc corr; 
    var estWP; 
    with WP;
 run;
+```
 
 *We are using PROC CORR to consider the correlation between WP and estWP.*
 *PROC CORR computes the Pearson correlation coefficient, which measures the*
@@ -151,6 +159,8 @@ run;
 *A value close to +1 means a strong positive linear relationship;*
 *a value close to -1 means a strong negative one;*
 *and a value near 0 means little or no linear relationship.*
+
+<br>
 
 
 Print and Graph
