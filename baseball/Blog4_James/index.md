@@ -40,43 +40,88 @@ But before we discuss metrics, let’s evaluate the Pythagorean Theorem for Base
 
 **Objective**  
 
-Validate Bill Jame's Pythagorean Theorem for Baseball  
+Validate Bill James' Pythagorean Theorem for Baseball  
 
-**What we know**  
+
+**What we know (Metrics and Formulas)**  
 
 - Winning Percentage: $WP = \frac{W}{W+L}$
 
 - Estimated Winning Percentage: $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$  
 
 
-**Requirements / Strategies**   
 
-W, G, R, RA
+**Required Variables**   
 
-Data and tools  
+From the Teams table in Lahman’s Baseball Database, we need:   
+- yearID (year ID)
+- teamID (team ID)
+- R (runs scored)
+- RA (runs scored against)
+- W (wins)
+- L (losses)
 
-- Lahman's Baseball Database
-- SQL
-- SAS 
+
+**Workflow**  
+1. Extract data from database using SQL
+2. Export CSV file from results
+3. Import CSV file into SAS
+4. Calculate the Pythagorean Expectation in SAS
+5. Create visuals in SAS.  
 
 
-SQL
+**Data and Tools**    
 
+- Data from **Lahman's Baseball Database** (SQLite)
+- **SQL** fro extracting data subset
+- **SAS Workbench** for importing, processing, and computing metrics  
+
+
+
+### Hitting the Database
+
+We will refer to the formulas and workflow as we begin writing code.  
+
+With the SQLite interface open the data will be extracted from the **Teams** table.
+Criteria for this extraction will include data from 1954 forward. 
+
+**SQL Code**
+
+``` SQL
 select yearID, teamID, R, RA, W, L
 from Teams
 where yearID>1954;
+```
 
-SAS Code  
+*This query returns one row per team per season. At this stage, no aggregation is performed.*  
+*The results of the query are extracted as a CSV file called rpg00.csv.* 
 
-import the pythag extract
+You can download **rpg00.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Data/rpg00.csv).  
+
+
+**SAS Code**  
+
+**Import the CSV file**
+
+``` SAS
+proc import datafile='/workspaces/workspace/.sasuser.workbench/CSV/PythagExtract1.csv'
+            out=pythag00
+            replace;
+run;
+proc contents; run;
+```
+*Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*
+*Run PROC CONTENTS to see informatoin about the temp file*
 
 calculate WP and the Pythagorean estimate  
 
+``` SAS
 data pythag;
    set pythag0;
    WP=w/(W+L);
    estWP=R**2/(R**2+RA**2);
 run;
+```
 
 Caculate r
 
