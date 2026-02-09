@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css"> 
 
-v7
+v8
 
 # Bill James and the <br> Two Numbers that Explain Winning  
 
@@ -46,7 +46,7 @@ And, let's start our evaluation by defining the objective, what we know (formula
 
 Validate Bill James' Pythagorean Theorem for Baseball  
 
-
+<br>
 
 **What we know (Metrics and Formulas)**  
 
@@ -84,6 +84,8 @@ From the Teams table in Lahman’s Baseball Database, we need:
 - **SQL** fro extracting data subset
 - **SAS Workbench** for importing, processing, and computing metrics  
 
+You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.  
+
 <br>
 
 ### Hitting the Database
@@ -104,8 +106,9 @@ where yearID>1954;
 ```
 
 *This query retrieves team performance statistics (runs scored, runs allowed, wins, losses)*
-*for all seasons after 1954 from the Teams table.*
+*for all seasons after 1954 from the Teams table.*  
 
+*The results were exported to a CSV file called PythagExtract1.csv*  
 
 You can download **PythagExtract1.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Data/PythagExtract1.csv).  
 
@@ -123,7 +126,7 @@ proc import datafile='/workspaces/workspace/.sasuser.workbench/CSV/PythagExtract
 run;
 proc contents; run;
 ```
-*Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*
+*Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*  
 *Run PROC CONTENTS to see informatoin about the temp file*  
 
 <br>
@@ -138,12 +141,12 @@ data pythag;
 run;
 ```
 
-*Read each observation from PYTHAG00 and write it to PYTHAG*
-*While doing so, compute Winning Percentage (WP) from wins and losses,*
+*Read each observation from PYTHAG00 and write it to PYTHAG*  
+*While doing so, compute Winning Percentage (WP) from wins and losses,*  
 *and the Pythagorean Expectation (estWP) from runs scored and allowed.*
 
 
-**Caculate teh Pearson Correlation Coefficient (r)**
+**Calculate the Pearson Correlation Coefficient (r)**
 
 ``` SAS
 proc corr; 
@@ -152,12 +155,12 @@ proc corr;
 run;
 ```
 
-*We are using PROC CORR to consider the correlation between WP and estWP.*
-*PROC CORR computes the Pearson correlation coefficient, which measures the*
+*We are using PROC CORR to consider the correlation between WP and estWP.*  
+*PROC CORR computes the Pearson Correlation Coefficient, which measures the*  
 *strength and direction of a linear relationship between two variables.*
 
-*A value close to +1 means a strong positive linear relationship;*
-*a value close to -1 means a strong negative one;*
+*A value close to +1 means a strong positive linear relationship;*  
+*a value close to -1 means a strong negative one;*  
 *and a value near 0 means little or no linear relationship.*
 
 <br>
