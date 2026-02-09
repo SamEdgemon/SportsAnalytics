@@ -38,9 +38,14 @@ James’ Pythagorean Expectation reframed the game with the realization that **i
 
 But before we discuss metrics, let’s evaluate the Pythagorean Theorem for Baseball.
 
+And, let's start our evaluation by defining the objective, what we know (formulas), requirements regarding data, a workflow, and finally declare where we are getting data and what tools we will use.  
+
+<br>
+
 **Objective**  
 
 Validate Bill James' Pythagorean Theorem for Baseball  
+
 
 
 **What we know (Metrics and Formulas)**  
@@ -48,6 +53,7 @@ Validate Bill James' Pythagorean Theorem for Baseball
 - Winning Percentage: $WP = \frac{W}{W+L}$
 
 - Estimated Winning Percentage: $estWP = \frac{R^{2}}{R^{2} + RA^{2}}$  
+
 
 
 
@@ -59,7 +65,8 @@ From the Teams table in Lahman’s Baseball Database, we need:
 - R (runs scored)
 - RA (runs scored against)
 - W (wins)
-- L (losses)
+- L (losses)  
+
 
 
 **Workflow**  
@@ -68,6 +75,7 @@ From the Teams table in Lahman’s Baseball Database, we need:
 3. Import CSV file into SAS
 4. Calculate the Pythagorean Expectation in SAS
 5. Create visuals in SAS.  
+
 
 
 **Data and Tools**    
@@ -97,7 +105,7 @@ where yearID>1954;
 *for all seasons after 1954 from the Teams table.*
 
 
-You can download **rpg00.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Data/rpg00.csv).  
+You can download **PythagExtract1.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Data/PythagExtract1.csv).  
 
 
 **SAS Code**  
