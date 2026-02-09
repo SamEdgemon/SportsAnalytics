@@ -93,8 +93,9 @@ from Teams
 where yearID>1954;
 ```
 
-*This query returns one row per team per season. At this stage, no aggregation is performed.*  
-*The results of the query are extracted as a CSV file called rpg00.csv.* 
+*This query retrieves team performance statistics (runs scored, runs allowed, wins, losses)*
+*for all seasons after 1954 from the Teams table.*
+
 
 You can download **rpg00.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog3_Eras/Data/rpg00.csv).  
 
