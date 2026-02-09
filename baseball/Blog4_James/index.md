@@ -81,7 +81,7 @@ From the Teams table in Lahman’s Baseball Database, we need:
 **Data and Tools**    
 
 - Data from **Lahman's Baseball Database** (SQLite)
-- **SQL** fro extracting data subset
+- **SQL** for extracting data subset
 - **SAS Workbench** for importing, processing, and computing metrics  
 
 You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workbench-for-learners.html" target="_blank">here</a>.  
@@ -92,7 +92,7 @@ You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workb
 
 We will refer to the formulas and workflow as we begin writing code.  
 
-With the SQLite interface open the data will be extracted from the **Teams** table.
+With the SQLite interface open the data will be extracted from the **Teams** table.  
 Criteria for this extraction will include data from 1954 forward.  
 
 <br>
@@ -127,7 +127,7 @@ run;
 proc contents; run;
 ```
 *Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*  
-*Run PROC CONTENTS to see informatoin about the temp file*  
+*Run PROC CONTENTS to see information about the temp file*  
 
 <br>
 
@@ -141,9 +141,11 @@ data pythag;
 run;
 ```
 
-*Read each observation from PYTHAG00 and write it to PYTHAG*  
+*Read each observation from PYTHAG00 and write it to PYTHAG.*  
 *While doing so, compute Winning Percentage (WP) from wins and losses,*  
-*and the Pythagorean Expectation (estWP) from runs scored and allowed.*
+*and the Pythagorean Expectation (estWP) from runs scored and allowed.*  
+
+<br>
 
 
 **Calculate the Pearson Correlation Coefficient (r)**
