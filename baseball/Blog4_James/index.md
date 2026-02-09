@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css"> 
 
-v5
+v6
 
 # Bill James and the <br> Two Numbers that Explain Winning  
 
