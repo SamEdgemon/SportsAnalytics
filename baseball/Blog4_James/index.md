@@ -113,21 +113,36 @@ proc contents; run;
 *Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*
 *Run PROC CONTENTS to see informatoin about the temp file*
 
-calculate WP and the Pythagorean estimate  
+**Calculate Winning Percentage (WP) and the Pythagorean Expectation (estWP)**  
 
 ``` SAS
 data pythag;
-   set pythag0;
+   set pythag00;
    WP=w/(W+L);
    estWP=R**2/(R**2+RA**2);
 run;
 ```
 
+*Read each observation from PYTHAG00 and write it to PYTHAG*
+*While doing so, compute Winning Percentage (WP) from wins and losses,*
+*and the Pythagorean Expectation (estWP) from runs scored and allowed.*
+
+
 Caculate r
 
 proc corr; 
-   var wp estWP; 
+   var estWP; 
+   with WP;
 run;
+
+*We are using PROC CORR to consider the correlation between WP and estWP.*
+*PROC CORR computes the Pearson correlation coefficient, which measures the*
+*strength and direction of a linear relationship between two variables.*
+
+*A value close to +1 means a strong positive linear relationship;*
+*a value close to -1 means a strong negative one;*
+*and a value near 0 means little or no linear relationship.*
+
 
 Print and Graph
 
