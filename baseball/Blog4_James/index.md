@@ -169,7 +169,7 @@ proc corr;
 run;
 ```
 
-We are using PROC CORR to consider the correlation between winning percentage (WP) and the Pythagorean Estimate (estWP). It computes the Pearson Correlation Coefficient (r), which measures the strength and direction of a linear relationship between two variables.
+We are using PROC CORR to examine the correlation between winning percentage (WP) and the Pythagorean Estimate (estWP). It computes the Pearson Correlation Coefficient (r), which measures the strength and direction of a linear relationship between two variables.
 
 Here are the results;
 
@@ -182,14 +182,32 @@ Here are the results;
 
 *A correlation value close to +1 indicates a strong positive linear relationship.*  
 
-The correlation between actual winning percentage (WP) and the Pythagorean estimate (estWP) is very close to +1. This tells us that teams with higher estimated winning percentages—based only on runs scored and runs allowed—also have higher actual winning percentages.  
+In this case, the correlation between actual winning percentage (WP) and the Pythagorean estimate (estWP) is very close to +1. This tells us that teams with higher estimated winning percentages—based only on runs scored and runs allowed—also have higher actual winning percentages.  
 
-*In practical terms, once runs are known, much of the variation in team success is explained.*
+*In practical terms, once runs are known, much of the variation in team success is already explained.*
+
+
+**Plot Actual Winning Percentage (WP) vs. the Pythagorean Expecation (estWP)**
+
+``` SAS
+proc sgplot data=pythag;
+   scatter x=estWP y=WP / markerattrs=(symbol=circlefilled color=blue);
+   xaxis label="Pythagorean Expectation (estWP)";
+   yaxis label="Actual Winning Percentage (WP)";
+   title "WP vs Pythagorean Estimate, 1955-2024";
+run;
+```
+
+This result motivates the next question: **if runs drive winning, which offensive metrics best explain runs?**
 
 <br>
 
 
 Print and Graph
+
+![Pythag1](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Images/pythag1.png)
+
+
 
 Radomly pick a year (show code)
 proc Print
