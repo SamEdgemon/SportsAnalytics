@@ -171,8 +171,8 @@ run;
 
 
 Result from PROC CORR.  
-| Variables Compared | Pearson Correlation (r) |
-|--------------------|--------------------------|
+| Variables Compared | Pearson Correlation (r) |  
+|--------------------|--------------------------|  
 | WP vs estWP        | 0.92                     |
 
 
