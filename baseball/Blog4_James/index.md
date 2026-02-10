@@ -170,7 +170,7 @@ run;
 ```
 
 
-Result from PROC CORR.
+Result from PROC CORR.  
 | Variables Compared | Pearson Correlation (r) |
 |--------------------|--------------------------|
 | WP vs estWP        | 0.92                     |
@@ -182,7 +182,7 @@ We are using PROC CORR to consider the correlation between winning percentage (W
 
 
 The correlation between actual winning percentage (WP) and the Pythagorean estimate (estWP) is very close to +1. This tells us that teams with higher estimated winning percentages—based only on runs scored and runs allowed—also have higher actual winning percentages.  
- 
+
 *In practical terms, once runs are known, much of the variation in team success is already explained.*
 
 <br>
