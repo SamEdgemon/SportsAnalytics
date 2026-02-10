@@ -169,18 +169,21 @@ proc corr;
 run;
 ```
 
+
+Result from PROC CORR.
 | Variables Compared | Pearson Correlation (r) |
 |--------------------|--------------------------|
 | WP vs estWP        | 0.92                     |
 
 
-*We are using PROC CORR to consider the correlation between WP and estWP.*  
-*PROC CORR computes the Pearson Correlation Coefficient, which measures the*  
-*strength and direction of a linear relationship between two variables.*
+We are using PROC CORR to consider the correlation between winning percentage (WP) and the Pythagorean Estimate (estWP). It computes the Pearson Correlation Coefficient (r), which measures the strength and direction of a linear relationship between two variables.
 
-*A value close to +1 means a strong positive linear relationship;*  
-*a value close to -1 means a strong negative one;*  
-*and a value near 0 means little or no linear relationship.*
+*A correlation value close to +1 indicates a strong positive linear relationship.*  
+
+
+The correlation between actual winning percentage (WP) and the Pythagorean estimate (estWP) is very close to +1. This tells us that teams with higher estimated winning percentages—based only on runs scored and runs allowed—also have higher actual winning percentages.  
+ 
+*In practical terms, once runs are known, much of the variation in team success is already explained.*
 
 <br>
 
