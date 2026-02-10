@@ -26,11 +26,13 @@ Reducing the complexity of a baseball season — 162 games, thousands of at-bats
 
 James discovered that a team’s winning percentage could be estimated using only Runs Scored (R) and Runs Allowed (RA):  
 
+<br>
 
 $$
 WP \approx \frac{R^2}{R^2 + RA^2}
 $$
 
+<br>
 
 
 This deceptively simple formula proved remarkably accurate, and its implication profound: nearly everything in *baseball boils down to how many runs a team scores and how many it allows.*  
@@ -73,11 +75,11 @@ From the Teams table in Lahman’s Baseball Database, we need:
 <br>
 
 **Workflow**  
-1. Extract data from database using SQL
-2. Export CSV file from results
-3. Import CSV file into SAS
-4. Calculate the Pythagorean Expectation in SAS
-5. Create visuals in SAS.  
+1. **Extract** data from database using SQL
+2. **Export** CSV file from results
+3. **Import** CSV file into SAS
+4. **Calculate** the Pythagorean Expectation in SAS
+5. **Create** visuals in SAS.  
   
 <br>
 
@@ -129,8 +131,9 @@ proc import datafile='/workspaces/workspace/.sasuser.workbench/CSV/PythagExtract
 run;
 proc contents; run;
 ```
-*Import the CSV file (PythagExtract1.csv). Save as a SAS temp file (pythag00)*  
-*Run PROC CONTENTS to see information about the temp file*  
+*Import the CSV file (PythagExtract1.csv).  
+*Save as a SAS temp file (pythag00).*  
+*Run PROC CONTENTS to see information about the temp file.*  
 
 <br>
 
@@ -148,6 +151,12 @@ run;
 *While doing so, compute Winning Percentage (WP) from wins and losses,*  
 *and the Pythagorean Expectation (estWP) from runs scored and allowed.*  
 
+*Recall our objective, "validate Bill James' Pythagorean Theorem for Baseball."*
+*In other words, does the Bill James' claim actually hold up with real data?*
+*How can we do that?*
+
+*One way to do that is with the Pearson correlation coefficient.*
+
 <br>
 
 
@@ -159,6 +168,11 @@ proc corr;
    with WP;
 run;
 ```
+
+| Variables Compared | Pearson Correlation (r) |
+|--------------------|--------------------------|
+| WP vs estWP        | 0.92                     |
+
 
 *We are using PROC CORR to consider the correlation between WP and estWP.*  
 *PROC CORR computes the Pearson Correlation Coefficient, which measures the*  
