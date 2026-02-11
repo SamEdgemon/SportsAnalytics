@@ -176,7 +176,7 @@ Here are the results;
 
 | Variables Compared | Pearson Correlation (r) |
 |--------------------|--------------------------|
-| WP vs estWP        | 0.92                     |
+| WP vs estWP        | 0.94                     |
 
 
 
@@ -190,32 +190,87 @@ In this case, the correlation between actual winning percentage (WP) and the Pyt
 **Plot Actual Winning Percentage (WP) vs. the Pythagorean Expecation (estWP)**
 
 ``` SAS
+ods graphics / reset width=1280px height=960px imagename="pythag1" outputfmt=png;
+ods listing gpath="/workspaces/workspace/.sasuser.workbench/Images";
 proc sgplot data=pythag;
-   scatter x=estWP y=WP / markerattrs=(symbol=circlefilled color=blue);
-   xaxis label="Pythagorean Expectation (estWP)";
-   yaxis label="Actual Winning Percentage (WP)";
-   title "WP vs Pythagorean Estimate, 1955-2024";
+   scatter x=estWP y=WP / markerattrs=(symbol=circlefilled color=blue size=12);
+   xaxis label="Pythagorean Expectation (estWP)"
+         labelattrs=(size=18)
+         valueattrs=(size=12);
+   yaxis label="Winning Percentage (WP)"
+         labelattrs=(size=18)
+         valueattrs=(size=12);
+   title height=2.5 "Winning Percentage vs Pythagorean Expectation";
 run;
+ods listing close;
 ```
-
-This result motivates the next question: **if runs drive winning, which offensive metrics best explain runs?**
 
 <br>
 
 
 Print and Graph
 
-![Pythag1](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Images/pythag1.png)
+![Pythag1](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Images/pythag1.png)  
+
+
+The scatterplot shows each team’s actual winning percentage (WP) plotted against its Pythagorean estimate (estWP). Each point represents a single team-season.
+
+If the Pythagorean formula perfectly predicted team performance, all points would lie exactly along a 45-degree line. Instead, we observe a tight upward-sloping cloud of points. Teams with higher estimated winning percentages almost always have higher actual winning percentages.
+
+This visual pattern corresponds to the **Pearson correlation coefficient of r = 0.94**. The points cluster closely around a linear relationship, indicating that *most of the variation in team success is explained by runs scored and runs allowed*.
+
+The small deviations from the implied line reflect randomness, sequencing effects, bullpen performance, and other factors that influence outcomes but are not captured directly by run totals.
+
+<br>
+
+This results motivate the next question: **if runs drive winning, which offensive metrics best explain runs?**
 
 
 
-Radomly pick a year (show code)
-proc Print
-proc sgplot
+**Why Does the Pythagorean Theorem for Baseball Matter?**
 
-Why is this important?
+It separates performance from results.
 
-Data Science
+Wins are the outcome. Runs scored and runs allowed are the underlying process.
 
-Next up  
+Our analysis shows a correlation of r = 0.94 between the Pythagorean estimate and actual winning percentage. Visually, the scatterplot confirms a tight linear relationship. Numerically, this implies that most of the variation in team success is associated with run differential.
+
+In practical terms, once runs are known, team success is largely determined. This reframes how we think about performance evaluation:
+
+- Are teams winning because they are fundamentally strong?
+
+- Or, are they temporarily benefiting from sequencing, luck, or one-run game variance?
+
+The Pythagorean formula gives us a principled way to answer that question.
+
+More broadly, we have demonstrated that *analytics tests ideas against data and quantifies relationships that would otherwise remain intuitive claims.*  
+
+<br>
+
+**A Note on Data Science Skills**
+
+In this post, we applied several foundational data science skills:
+
+- Extracted structured data from a database using SQL
+
+- Exported query results to a CSV file
+
+- Imported external data into SAS
+
+- Created derived variables (e.g., winning percentage, Pythagorean estimate)
+
+- Conducted a correlation analysis using PROC CORR
+
+- Visualized the relationship using PROC SGPLOT
+
+Most importantly, *we learned how to interpret a correlation coefficient.*
+
+Correlation is one of the most widely used tools in analytics. It quantifies the strength and direction of a linear relationship between two variables. In this case, it allowed us to evaluate whether Bill James’ formula meaningfully tracks actual team performance.
+
+*Understanding correlation is foundational.* Before building predictive models, before running regressions, before applying machine learning algorithms, analysts must first understand whether variables are meaningfully related.
+
+That skill — testing and quantifying relationships — is central to both sports analytics and business analytics.
+
+
+**Next up**
 A shorter blog, but one of importance. Let's build a model!
