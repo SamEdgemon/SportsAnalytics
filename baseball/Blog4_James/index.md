@@ -47,9 +47,12 @@ And, let's start our evaluation by defining the objective, what we know (formula
 
 <br>
 
+### Validating the Pythagorean Theorem for Baseball  
+
+
 **Objective**  
 
-Validate Bill James' Pythagorean Theorem for Baseball  
+Validate Bill James' Pythagorean Theorem for Baseball.
 
 <br>
 
@@ -110,12 +113,11 @@ from Teams
 where yearID>1954;
 ```
 
-*This query retrieves team performance statistics (runs scored, runs allowed, wins, losses)*
-*for all seasons after 1954 from the Teams table.*  
+This query retrieves team performance statistics (runs scored, runs allowed, wins, losses) for all seasons after 1954 from the Teams table.  
 
-*The results were exported to a CSV file called PythagExtract1.csv*  
+The results were exported to a CSV file called PythagExtract1.csv  
 
-You can download **PythagExtract1.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Data/PythagExtract1.csv).  
+You can **download PythagExtract1.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Data/PythagExtract1.csv).  
 
 <br>
 
@@ -131,9 +133,9 @@ proc import datafile='/workspaces/workspace/.sasuser.workbench/CSV/PythagExtract
 run;
 proc contents; run;
 ```
-*Import the CSV file (PythagExtract1.csv).  
-*Save as a SAS temp file (pythag00).*  
-*Run PROC CONTENTS to see information about the temp file.*  
+Us PROC IMPORT to pull in the CSV file (PythagExtract1.csv).  
+Save as a SAS temp file (pythag00).  
+Run PROC CONTENTS to see information about the temp file.  
 
 <br>
 
@@ -147,15 +149,13 @@ data pythag;
 run;
 ```
 
-*Read each observation from PYTHAG00 and write it to PYTHAG.*  
-*While doing so, compute Winning Percentage (WP) from wins and losses,*  
-*and the Pythagorean Expectation (estWP) from runs scored and allowed.*  
+This datastep reads each observation from PYTHAG00 and writes it to PYTHAG. While doing so, we will compute Winning Percentage (WP) from wins and losses, and the Pythagorean Expectation (estWP) from runs scored and allowed.  
 
-*Recall our objective, "validate Bill James' Pythagorean Theorem for Baseball."*
-*In other words, does the Bill James' claim actually hold up with real data?*
-*How can we do that?*
+Recall our objective, "validate Bill James' Pythagorean Theorem for Baseball."
+In other words we are asking the question, *does the Bill James' claim actually hold up with real data?*  
+How can we do that?
 
-*One way to do that is with the Pearson correlation coefficient.*
+One way to do that is to **calculate the Pearson correlation coefficient.**
 
 <br>
 
@@ -182,33 +182,24 @@ Here are the results;
 
 *A correlation value close to +1 indicates a strong positive linear relationship.*  
 
-In this case, the correlation between actual winning percentage (WP) and the Pythagorean estimate (estWP) is very close to +1. This tells us that teams with higher estimated winning percentages—based only on runs scored and runs allowed—also have higher actual winning percentages.  
+In this case, the correlation between actual winning percentage (WP) and the Pythagorean estimate (estWP) is very close to +1. This tells us that teams with higher *estimated* winning percentages — based only on runs scored and runs allowed — also have higher *actual* winning percentages.  
 
-*In practical terms, once runs are known, much of the variation in team success is already explained.*
+In practical terms, once runs (R and RA) are known, much of the variation in team success can be explained.
 
 
 **Plot Actual Winning Percentage (WP) vs. the Pythagorean Expecation (estWP)**
 
 ``` SAS
-ods graphics / reset width=1280px height=960px imagename="pythag1" outputfmt=png;
-ods listing gpath="/workspaces/workspace/.sasuser.workbench/Images";
 proc sgplot data=pythag;
-   scatter x=estWP y=WP / markerattrs=(symbol=circlefilled color=blue size=12);
-   xaxis label="Pythagorean Expectation (estWP)"
-         labelattrs=(size=18)
-         valueattrs=(size=12);
-   yaxis label="Winning Percentage (WP)"
-         labelattrs=(size=18)
-         valueattrs=(size=12);
-   title height=2.5 "Winning Percentage vs Pythagorean Expectation";
+   scatter x=estWP y=WP / markerattrs=(symbol=circlefilled color=blue);
+   xaxis label="Pythagorean Expectation (estWP)";
+   yaxis label="Winning Percentage (WP)";
+   title "Winning Percentage vs Pythagorean Expectation";
 run;
 ods listing close;
 ```
 
 <br>
-
-
-Print and Graph
 
 ![Pythag1](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Images/pythag1.png)  
 
