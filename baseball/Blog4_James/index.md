@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css"> 
 
-v8
+v9
 
 # Bill James and the Two Numbers <br> that Explain Winning  
 
@@ -15,9 +15,9 @@ Often referred to as the father of modern baseball analytics, Bill James was bor
 
 He coined and popularized that term "sabermetrics" to describe the objective, statistical analysis of baseball but the label mattered less than the shift in reasoning behind it. Prior baseball statistics focused on what should be counted. **James focused on what should be explained.** With a clear framework for thinking statistically, James was ready to communicate his ideas to a broader audience.  
 
-Through a series of self-published books he called *Baseball Abstracts*, which he began publishing in 1977, **James introduced a new way of thinking about performance.** His writing combined statistical rigor with wit and skepticism, challenging assumptions that had gone largely unquestioned for decades. Metrics such as Runs Created, Range Factor, Defensive Efficiency Rating, Win Shares, and the Pythagorean Expectation were not presented as clever inventions, but as tools designed to test his central question: *what truly causes teams to win?*  
+Through a series of self-published books he called *Baseball Abstracts*, which he began publishing in 1977, **James introduced a new way of thinking about performance.** His writing combined statistical rigor with wit and skepticism, challenging assumptions that had gone largely unquestioned for decades. Metrics such as Runs Created, Range Factor, Defensive Efficiency Rating, Win Shares, and the **Pythagorean Expectation** were not presented as clever inventions, but as tools designed to test his central question: *what truly causes teams to win?*  
 
-What ultimately separated James from his predecessors was not technical sophistication, but the question he insisted on asking. Rather than refining descriptive measures of performance, he asked a more fundamental question: What actually causes teams to win baseball games? That question — and the discipline to follow it wherever the data led — reframed how offense, defense, and value would be understood going forward. This focus on identifying the core drivers of winning naturally led him to ask whether team performance could be distilled to just two numbers: *runs scored and runs allowed.*  
+What ultimately separated James from his predecessors was not technical sophistication, but the question he insisted on asking. Rather than refining descriptive measures of performance, he asked a more fundamental question: *What actually causes teams to win baseball games*? That question — and the discipline to follow it wherever the data led — reframed how offense, defense, and value would be understood going forward. This focus on identifying the core drivers of winning naturally led him to ask whether team performance could be distilled to just two numbers: *runs scored and runs allowed.*  
 
 
 ### The Pythagorean Theorem for Baseball  
@@ -78,9 +78,9 @@ From the Teams table in Lahman’s Baseball Database, we need:
 <br>
 
 **Workflow**  
-1. **Extract** data from database using SQL
+1. **Extract** data from the database using SQL
 2. **Export** CSV file from results
-3. **Import** CSV file into SAS
+3. **Import** CSV file into SAS Workbench
 4. **Calculate** the Pythagorean Expectation in SAS
 5. **Create** visuals in SAS.  
   
@@ -100,7 +100,7 @@ You can get SAS Workbench <a href="https://www.sas.com/en_us/software/viya-workb
 
 We will refer to the formulas and workflow as we begin writing code.  
 
-With the SQLite interface open the data will be extracted from the **Teams** table.  
+Data will be extracted from the **Teams** table using SQL.  
 Criteria for this extraction will include data from 1954 forward.  
 
 <br>
@@ -115,7 +115,7 @@ where yearID>1954;
 
 This query retrieves team performance statistics (runs scored, runs allowed, wins, losses) for all seasons after 1954 from the Teams table.  
 
-The results were exported to a CSV file called PythagExtract1.csv  
+The results are exported to a CSV file called PythagExtract1.csv  
 
 You can **download PythagExtract1.csv** [here](https://samedgemon.github.io/SportsAnalytics/baseball/Blog4_James/Data/PythagExtract1.csv).  
 
@@ -123,6 +123,8 @@ You can **download PythagExtract1.csv** [here](https://samedgemon.github.io/Spor
 
 
 **SAS Code**  
+
+Using SAS Workbench;
 
 **Import the CSV file**
 
@@ -133,7 +135,7 @@ proc import datafile='/workspaces/workspace/.sasuser.workbench/CSV/PythagExtract
 run;
 proc contents; run;
 ```
-Us PROC IMPORT to pull in the CSV file (PythagExtract1.csv).  
+Use PROC IMPORT to pull in the CSV file (PythagExtract1.csv).  
 Save as a SAS temp file (pythag00).  
 Run PROC CONTENTS to see information about the temp file.  
 
@@ -151,7 +153,7 @@ run;
 
 This datastep reads each observation from PYTHAG00 and writes it to PYTHAG. While doing so, we will compute Winning Percentage (WP) from wins and losses, and the Pythagorean Expectation (estWP) from runs scored and allowed.  
 
-Recall our objective, "validate Bill James' Pythagorean Theorem for Baseball."
+Recall that our objective, is to "validate Bill James' Pythagorean Theorem for Baseball."
 In other words we are asking the question, *does the Bill James' claim actually hold up with real data?*  
 How can we do that?
 
@@ -216,7 +218,7 @@ The small deviations from the implied line reflect randomness, sequencing effect
 
 This results motivate the next question: **if runs drive winning, which offensive metrics best explain runs?**
 
-
+<br>
 
 **Why Does the Pythagorean Theorem for Baseball Matter?**
 
@@ -228,11 +230,9 @@ Our analysis shows a correlation of r = 0.94 between the Pythagorean estimate an
 
 In practical terms, once runs are known, team success is largely determined. This reframes how we think about performance evaluation:
 
-- Are teams winning because they are fundamentally strong?
+- Are teams winning because they are fundamentally strong? Or, are they temporarily benefiting from sequencing, luck, or one-run game variance?
 
-- Or, are they temporarily benefiting from sequencing, luck, or one-run game variance?
-
-The Pythagorean formula gives us a principled way to answer that question.
+The Pythagorean formula gives us a principled way to answer these questions.
 
 More broadly, we have demonstrated that *analytics tests ideas against data and quantifies relationships that would otherwise remain intuitive claims.*  
 
