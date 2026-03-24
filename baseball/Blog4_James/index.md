@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="/SportsAnalytics/assets/css/custom.css"> 
 
-v9
+
 
 # Bill James and the Two Numbers <br> that Explain Winning  
 
@@ -104,11 +104,11 @@ Data will be extracted from the **Teams** table using SQL.
 Criteria for this extraction will include data from 1954 forward.  
 
 
-**SQL Code**
+**SQL Code: Query and Extract**
 
 Using SQLite;
 
-``` Query and Extract
+``` SQL
 select yearID, teamID, R, RA, W, L
 from Teams
 where yearID>1954;
@@ -267,5 +267,5 @@ In this case, it allowed us to evaluate whether Bill James’ formula meaningful
 That skill — testing and quantifying relationships — is central to both sports analytics and business analytics.
 
 
-**Next up**
+**Next up** 
 A shorter blog, but one of importance — Let's build a model!
