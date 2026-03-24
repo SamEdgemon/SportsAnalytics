@@ -103,11 +103,12 @@ We will refer to the formulas and workflow as we begin writing code.
 Data will be extracted from the **Teams** table using SQL.  
 Criteria for this extraction will include data from 1954 forward.  
 
-<br>
 
 **SQL Code**
 
-``` SQL
+Using SQLite;
+
+``` Query and Extract
 select yearID, teamID, R, RA, W, L
 from Teams
 where yearID>1954;
@@ -216,7 +217,7 @@ The small deviations from the implied line reflect randomness, sequencing effect
 
 <br>
 
-This results motivate the next question: **if runs drive winning, which offensive metrics best explain runs?**
+This results motivate the next question (that will be answered in a future blog): **if runs drive winning, which offensive metrics best explain runs?**
 
 <br>
 
@@ -226,18 +227,17 @@ It separates performance from results.
 
 - Wins are the outcome — Runs scored and runs allowed are the underlying process.
 
-- Our analysis shows a correlation of r = 0.94 between the Pythagorean estimate and actual winning percentage. 
+- Our analysis finds a correlation of r = 0.94 between the Pythagorean Estimate (estWP) and actual WP. 
    + Visually, the scatterplot confirms a tight linear relationship. 
    + Numerically, this implies that most of the variation in team success is associated with run differential.
 
-- In practical terms, once runs are known, team success is largely determined. This reframes how we think about performance evaluation:
-
+- In practical terms, once runs are known, team success is largely determined reframing our approach to evaluating performance: 
    + Are teams winning because they are fundamentally strong? 
    + Or, are they temporarily benefiting from sequencing, luck, or one-run game variance?
 
-The Pythagorean formula gives us a principled way to answer these questions.
+   The Pythagorean formula gives us a principled way to answer these questions.
 
-More broadly, we have demonstrated that *analytics tests ideas against data and quantifies relationships that would otherwise remain intuitive claims.*  
+More broadly, we have demonstrated that *analytics tests ideas against data and quantifies the relationships that would otherwise remain intuitive claims.*  
 
 <br>
 
@@ -249,7 +249,7 @@ In this post, we applied several foundational data science skills:
 
 - Exported query results to a CSV file
 
-- Imported external data into SAS
+- Imported external data (a CSV file) into SAS Workbench
 
 - Created derived variables (e.g., winning percentage, Pythagorean estimate)
 
@@ -259,12 +259,13 @@ In this post, we applied several foundational data science skills:
 
 Most importantly, *we learned how to interpret a correlation coefficient.*
 
-Correlation is one of the most widely used tools in analytics. It quantifies the strength and direction of a linear relationship between two variables. In this case, it allowed us to evaluate whether Bill James’ formula meaningfully tracks actual team performance.
+Correlation is a widely used tools in analytics that quantifies the strength and direction of a linear relationship between two variables. 
+In this case, it allowed us to evaluate whether Bill James’ formula meaningfully tracks actual team performance.
 
-*Understanding correlation is foundational.* Before building predictive models, before running regressions, before applying machine learning algorithms, analysts must first understand whether variables are meaningfully related.
+*Understanding correlation is foundational:* before building predictive models, unning regressions, or applying machine learning algorithms, analysts must first understand whether variables are meaningfully related.
 
 That skill — testing and quantifying relationships — is central to both sports analytics and business analytics.
 
 
 **Next up**
-A shorter blog, but one of importance. Let's build a model!
+A shorter blog, but one of importance — Let's build a model!
